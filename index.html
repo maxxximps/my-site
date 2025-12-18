@@ -1202,16 +1202,17 @@
           lbMedia.appendChild(img);
         } else {
   } else {
-  const v = document.createElement('video');
-  v.src = item.src;
-  v.autoplay = true;
-  v.loop = true;
-  v.muted = true;
-  v.playsInline = true;
-  v.controls = true;
-  lbMedia.appendChild(v);
-  try { v.play(); } catch (e) {}
-}
+          const v = document.createElement('video');
+          v.src = item.src;
+          v.autoplay = true;
+          v.loop = true;
+          v.muted = true;
+          v.playsInline = true;
+          v.controls = true;
+          lbMedia.appendChild(v);
+          try { v.play(); } catch (e) {}
+        }
+
 
         }
 
@@ -1352,6 +1353,7 @@
   </script>
 </body>
 </html>
+
 
 
 
