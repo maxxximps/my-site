@@ -1189,7 +1189,6 @@
         if (!items.length) return;
         currentIndex = (index + items.length) % items.length;
 
-        // очистка
         lbMedia.innerHTML = '';
 
         const item = items[currentIndex];
@@ -1201,29 +1200,23 @@
           img.alt = item.title || 'Фото';
           lbMedia.appendChild(img);
         } else {
-  } else {
           const v = document.createElement('video');
           v.src = item.src;
           v.autoplay = true;
           v.loop = true;
           v.muted = true;
           v.playsInline = true;
-          v.controls = true;
+          v.controls = false; // ✅ без элементов управления
           lbMedia.appendChild(v);
           try { v.play(); } catch (e) {}
         }
 
-
-        }
-
-        // показывать стрелки только если есть что листать
         const showNav = items.length > 1;
         lbPrev.classList.toggle('is-hidden', !showNav);
         lbNext.classList.toggle('is-hidden', !showNav);
       }
 
       function openLightboxFromNode(node) {
-        // собрать items: если клик из карусели — берём все слайды этой карусели
         items = [];
         currentIndex = 0;
 
@@ -1235,7 +1228,6 @@
             if (it) items.push(it);
           });
 
-          // определить индекс текущего слайда
           const slide = node.closest('.carousel-slide');
           if (slide) {
             const idx = slides.findIndex(s => s === slide);
@@ -1244,7 +1236,6 @@
             currentIndex = 0;
           }
         } else {
-          // не в карусели — открываем одиночный
           const tag = node.tagName.toLowerCase();
           if (tag === 'img') items = [{ type: 'img', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
           if (tag === 'video') items = [{ type: 'video', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
@@ -1276,15 +1267,12 @@
       function next() { if (items.length > 1) render(currentIndex + 1); }
       function prev() { if (items.length > 1) render(currentIndex - 1); }
 
-      // Закрытие
       lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
       lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
 
-      // Навигация кнопками
       lbNext.addEventListener('click', (e) => { e.stopPropagation(); next(); });
       lbPrev.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
 
-      // Клавиатура: ESC / ← →
       document.addEventListener('keydown', (e) => {
         if (!lb.classList.contains('show')) return;
         if (e.key === 'Escape') closeLightbox();
@@ -1292,7 +1280,6 @@
         if (e.key === 'ArrowLeft') prev();
       });
 
-      // Свайп на телефоне
       let touchX = 0;
       let touchY = 0;
       let tracking = false;
@@ -1303,10 +1290,6 @@
         tracking = true;
         touchX = e.touches[0].clientX;
         touchY = e.touches[0].clientY;
-      }, { passive: true });
-
-      lbWrap.addEventListener('touchmove', (e) => {
-        // ничего не делаем, просто фиксируем что есть движение
       }, { passive: true });
 
       lbWrap.addEventListener('touchend', (e) => {
@@ -1320,18 +1303,17 @@
         const dx = endX - touchX;
         const dy = endY - touchY;
 
-        // если это вертикальный жест — не листаем
         if (Math.abs(dy) > Math.abs(dx)) return;
 
-        // порог
         if (dx <= -55) next();
         if (dx >= 55) prev();
       }, { passive: true });
 
-      // Подключаем клики к медиа
       function bindMediaClicks(root) {
         const imgs = root.querySelectorAll('.gallery-media img');
         const vids = root.querySelectorAll('.gallery-media video');
+        const gifVids = root.querySelectorAll('.gif-variant-media video');
+        const heroVids = root.querySelectorAll('.preview-frame video');
 
         imgs.forEach((img) => {
           img.addEventListener('click', (e) => {
@@ -1346,6 +1328,20 @@
             openLightboxFromNode(vid);
           });
         });
+
+        gifVids.forEach((vid) => {
+          vid.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightboxFromNode(vid);
+          });
+        });
+
+        heroVids.forEach((vid) => {
+          vid.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightboxFromNode(vid);
+          });
+        });
       }
 
       bindMediaClicks(document);
@@ -1353,11 +1349,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
