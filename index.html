@@ -1201,15 +1201,20 @@
           img.alt = item.title || 'Фото';
           lbMedia.appendChild(img);
         } else {
-          const v = document.createElement('video');
-          v.src = item.src;
-          v.autoplay = true;
-          v.loop = true;
-          v.muted = true;
-          v.playsInline = true;
-          v.controls = true;
-          lbMedia.appendChild(v);
-          try { v.play(); } catch (e) {}
+  const v = document.createElement('video');
+  v.src = item.src;
+  v.autoplay = true;
+  v.loop = true;
+  v.muted = true;
+  v.playsInline = true;
+  v.controls = false;        // ❌ НЕТ контролов
+  v.disablePictureInPicture = true;
+  v.setAttribute('controlslist', 'nodownload nofullscreen noremoteplayback');
+
+  lbMedia.appendChild(v);
+  try { v.play(); } catch (e) {}
+}
+
         }
 
         // показывать стрелки только если есть что листать
@@ -1349,6 +1354,7 @@
   </script>
 </body>
 </html>
+
 
 
 
