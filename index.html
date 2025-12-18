@@ -1201,23 +1201,16 @@
           img.alt = item.title || 'Фото';
           lbMedia.appendChild(img);
         } else {
+  } else {
   const v = document.createElement('video');
-v.src = item.src;
-v.autoplay = true;
-v.loop = true;
-v.muted = true;
-v.playsInline = true;
-
-v.controls = false;
-v.removeAttribute('controls');
-v.setAttribute('playsinline', 'true');
-
-v.disablePictureInPicture = true;
-v.setAttribute('controlslist', 'nodownload nofullscreen noremoteplayback');
-
-lbMedia.appendChild(v);
-try { v.play(); } catch (e) {}
-
+  v.src = item.src;
+  v.autoplay = true;
+  v.loop = true;
+  v.muted = true;
+  v.playsInline = true;
+  v.controls = true;
+  lbMedia.appendChild(v);
+  try { v.play(); } catch (e) {}
 }
 
         }
@@ -1359,6 +1352,7 @@ try { v.play(); } catch (e) {}
   </script>
 </body>
 </html>
+
 
 
 
