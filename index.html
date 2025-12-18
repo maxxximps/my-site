@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>My Demo Site — 18+</title>
+  <title>Maxim Privat Ps — Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Демо-сайт (эксперимент). 18+." />
+  <meta name="description" content="Демо-страница: обработка фото, монтаж и AI-анимация. Примеры ниже." />
 
   <style>
     :root {
@@ -44,7 +44,11 @@
       margin-bottom: 22px;
     }
 
-    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
     .logo {
       width: 42px;
@@ -74,22 +78,23 @@
       padding: 6px 10px;
       border-radius: 999px;
       border: 1px solid rgba(255, 75, 92, 0.6);
-      color: var(--danger);
+      color: #ffd4e6;
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(120, 0, 20, 0.28);
-      box-shadow: 0 0 18px rgba(255, 75, 92, 0.4);
+      background: rgba(120, 0, 20, 0.18);
+      box-shadow: 0 0 18px rgba(255, 75, 92, 0.18);
     }
 
     .badge-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--danger);
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(255, 59, 129, 0.7);
     }
 
     /* HERO */
@@ -317,7 +322,6 @@
     }
 
     .gallery-meta-main { color: var(--text-main); }
-
     .gallery-meta-type {
       font-size: 11px;
       color: var(--text-muted);
@@ -334,9 +338,13 @@
       white-space: nowrap;
     }
 
-    .media-rows { display: flex; flex-direction: column; gap: 16px; }
+    .media-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-    /* Фото-блок */
+    /* Фото-блок: НЕ ТРОГАЮ */
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -346,7 +354,7 @@
     .photo-grid .gallery-media { height: 100%; }
     .photo-grid .gallery-media img { object-fit: contain !important; background: #000; }
 
-    /* GIF-блок: 3/4 */
+    /* GIF-блок: как верхний (3/4) */
     .gif-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -354,7 +362,6 @@
     }
 
     .gif-grid .gif-variant-media {
-      position: relative;
       aspect-ratio: 3 / 4;
       border-radius: 16px;
       overflow: hidden;
@@ -362,6 +369,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       background: radial-gradient(circle at top, rgba(255, 59, 129, 0.22), transparent 60%),
                   radial-gradient(circle at bottom, #050509, #050509);
+      position: relative;
     }
 
     .gif-grid .gif-variant-media video {
@@ -372,29 +380,30 @@
       background: #000;
     }
 
-    /* === GIF arrows (carousel) === */
-    .gif-grid .gif-arrow{
+    /* стрелки внутри GIF-карточки */
+    .gif-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.45);
+      border: none;
+      padding: 0;
+      background: rgba(0, 0, 0, 0.45);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 6;
-      font-size: 22px;
+      z-index: 5;
+      font-size: 16px;
       line-height: 1;
       user-select: none;
     }
-    .gif-grid .gif-arrow:hover { background: rgba(0,0,0,0.75); }
-    .gif-grid .gif-arrow.prev { left: 10px; }
-    .gif-grid .gif-arrow.next { right: 10px; }
+    .gif-arrow:hover { background: rgba(0, 0, 0, 0.8); }
+    .gif-arrow.prev { left: 8px; }
+    .gif-arrow.next { right: 8px; }
 
     .gif-tabs {
       display: flex;
@@ -463,9 +472,6 @@
 
     .card-footer-note { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
 
-    .warning { border-left: 3px solid var(--danger); background: rgba(40, 10, 20, 0.92); }
-    .warning strong { color: #ff9aa5; }
-
     footer {
       margin-top: 28px;
       font-size: 11px;
@@ -530,12 +536,6 @@
       .hero { padding: 16px 14px; gap: 14px; }
       .hero-left h2 { font-size: 23px; }
       .photo-grid .gallery-item { height: 290px; }
-
-      /* Фото: 1 колонка на телефоне */
-      .photo-grid { grid-template-columns: 1fr; }
-      .photo-grid .gallery-item { height: auto !important; }
-      .photo-grid .gallery-media { height: auto !important; aspect-ratio: 4 / 3; }
-      .photo-grid .gallery-media img { object-fit: contain !important; }
     }
 
     /* ===== Lightbox / Viewer ===== */
@@ -660,8 +660,10 @@
       user-select: none;
     }
     .lb-nav:hover { background: rgba(0,0,0,0.65); }
+
     .lb-prev { left: 10px; }
     .lb-next { right: 10px; }
+
     .lb-nav.is-hidden { display: none; }
 
     /* подсказка что можно открыть */
@@ -670,6 +672,13 @@
     .gif-variant-media video,
     .preview-frame video {
       cursor: zoom-in;
+    }
+
+    @media (max-width: 600px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid .gallery-item { height: auto !important; }
+      .photo-grid .gallery-media { height: auto !important; aspect-ratio: 4 / 3; }
+      .photo-grid .gallery-media img { object-fit: contain !important; }
     }
   </style>
 </head>
@@ -680,13 +689,13 @@
       <div class="brand">
         <div class="logo"><span>MP</span></div>
         <div class="brand-text">
-          <h1>My Demo Page</h1>
-          <p>Демо · монтаж · анимация · 18+</p>
+          <h1>Maxim Privat Ps</h1>
+          <p>Обработка фото · монтаж · AI-анимация · demo</p>
         </div>
       </div>
       <div class="badge-18">
         <span class="badge-dot"></span>
-        <span>Контент 18+</span>
+        <span>DEMO PAGE</span>
       </div>
     </header>
 
@@ -695,30 +704,23 @@
       <section class="hero">
         <div class="hero-left">
           <h2>
-            <span class="accent">ДЕМО-ПОРТФОЛИО</span><br>
-            Примеры / Варианты / Анимация
+            <span class="accent">ПРИМЕРЫ РАБОТ</span><br>
+            Фото / Монтаж / AI&nbsp;Анимация
           </h2>
 
           <div class="hero-text">
-            <div class="strong">Это учебный демо-сайт для экспериментов с UI.</div>
-            <div>Ниже — примеры карточек, каруселей и просмотрщика.</div>
-
-            <div class="muted">В теме более <span style="color:#ffd4e6;font-weight:650;">8 лет</span> (пример текста).</div>
-            <div class="muted">Ручная работа и индивидуальный подход (пример текста).</div>
+            <div class="strong">Демо-страница для тестов интерфейса.</div>
+            <div class="muted">Карусели, табы, просмотрщик на весь экран.</div>
 
             <div class="hint">
-              <span>Все примеры — ниже</span>
+              <span>Примеры — ниже</span>
               <span class="arrow">↓</span>
             </div>
-
-            <div class="muted">Это демо. Контент-ссылки можно заменить на свои.</div>
           </div>
 
           <div class="hero-cta">
             <div class="order-row">
-              <div class="order-label">Связаться</div>
-
-              <!-- TODO: замени ссылки -->
+              <div class="order-label">Контакты (пример)</div>
               <a href="https://t.me/yourusername" class="btn-main" target="_blank" rel="noopener">
                 <span>✉</span>
                 <span>Написать в&nbsp;Telegram</span>
@@ -743,7 +745,7 @@
             </div>
 
             <div class="hero-note">
-              Демо-текст: опиши задачу и приложи исходные материалы.
+              Демо-тексты. Можно заменить на свои.
             </div>
           </div>
         </div>
@@ -761,13 +763,13 @@
                 <video src="https://files.catbox.moe/gafpbc.mp4" autoplay muted loop playsinline preload="auto"></video>
               </div>
 
-              <button class="carousel-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-              <button class="carousel-arrow next" type="button" aria-label="Вперед">&#10095;</button>
+              <button class="carousel-arrow prev" type="button">&#10094;</button>
+              <button class="carousel-arrow next" type="button">&#10095;</button>
             </div>
 
             <div class="floating-label">
               <span class="floating-label-dot"></span>
-              <span>демо анимации</span>
+              <span>пример анимации (демо)</span>
             </div>
           </div>
         </div>
@@ -778,7 +780,7 @@
         <div class="section-header">
           <div class="section-title">📸 Фото-примеры</div>
           <div class="section-subtitle">
-            Статичные примеры (карусель внутри карточки). Клик — откроет просмотрщик.
+            Статичные примеры. По клику — просмотр на весь экран.
           </div>
         </div>
 
@@ -788,21 +790,21 @@
               <div class="gallery-media" style="height:100%;">
                 <div class="carousel">
                   <div class="carousel-slide active">
-                    <img src="https://koma033.github.io/my-media/img/1%D0%B0.jpg" alt="Пример 1 — кадр 1" />
+                    <img src="https://koma033.github.io/my-media/img/1%D0%B0.jpg" alt="Пример 1 — фото 1" />
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://koma033.github.io/my-media/img/2.jpg" alt="Пример 1 — кадр 2" />
+                    <img src="https://koma033.github.io/my-media/img/2.jpg" alt="Пример 1 — фото 2" />
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://koma033.github.io/my-media/img/3.jpg" alt="Пример 1 — кадр 3" />
+                    <img src="https://koma033.github.io/my-media/img/3.jpg" alt="Пример 1 — фото 3" />
                   </div>
-                  <button class="carousel-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                  <button class="carousel-arrow next" type="button" aria-label="Вперед">&#10095;</button>
+                  <button class="carousel-arrow prev" type="button">&#10094;</button>
+                  <button class="carousel-arrow next" type="button">&#10095;</button>
                 </div>
               </div>
               <div class="gallery-meta">
                 <div>
-                  <div class="gallery-meta-main">Пример эффекта A</div>
+                  <div class="gallery-meta-main">Пример обработки 1</div>
                   <div class="gallery-meta-type">статичное фото</div>
                 </div>
                 <div class="pill-dark">Фото</div>
@@ -813,21 +815,21 @@
               <div class="gallery-media" style="height:100%;">
                 <div class="carousel">
                   <div class="carousel-slide active">
-                    <img src="https://files.catbox.moe/gv86hf.jpg" alt="Пример 2 — кадр 1" />
+                    <img src="https://files.catbox.moe/gv86hf.jpg" alt="Пример 2 — фото 1" />
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://koma033.github.io/my-media/img/2.jpg" alt="Пример 2 — кадр 2" />
+                    <img src="https://koma033.github.io/my-media/img/2.jpg" alt="Пример 2 — фото 2" />
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://koma033.github.io/my-media/img/3.jpg" alt="Пример 2 — кадр 3" />
+                    <img src="https://koma033.github.io/my-media/img/3.jpg" alt="Пример 2 — фото 3" />
                   </div>
-                  <button class="carousel-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                  <button class="carousel-arrow next" type="button" aria-label="Вперед">&#10095;</button>
+                  <button class="carousel-arrow prev" type="button">&#10094;</button>
+                  <button class="carousel-arrow next" type="button">&#10095;</button>
                 </div>
               </div>
               <div class="gallery-meta">
                 <div>
-                  <div class="gallery-meta-main">Пример эффекта B</div>
+                  <div class="gallery-meta-main">Пример обработки 2</div>
                   <div class="gallery-meta-type">статичное фото</div>
                 </div>
                 <div class="pill-dark">Фото</div>
@@ -838,21 +840,21 @@
               <div class="gallery-media" style="height:100%;">
                 <div class="carousel">
                   <div class="carousel-slide active">
-                    <img src="https://koma033.github.io/my-media/img/dick.jpg" alt="Пример 3 — кадр 1" />
+                    <img src="https://koma033.github.io/my-media/img/dick.jpg" alt="Пример 3 — фото 1" />
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://koma033.github.io/my-media/img/2.jpg" alt="Пример 3 — кадр 2" />
+                    <img src="https://koma033.github.io/my-media/img/2.jpg" alt="Пример 3 — фото 2" />
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://koma033.github.io/my-media/img/3.jpg" alt="Пример 3 — кадр 3" />
+                    <img src="https://koma033.github.io/my-media/img/3.jpg" alt="Пример 3 — фото 3" />
                   </div>
-                  <button class="carousel-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                  <button class="carousel-arrow next" type="button" aria-label="Вперед">&#10095;</button>
+                  <button class="carousel-arrow prev" type="button">&#10094;</button>
+                  <button class="carousel-arrow next" type="button">&#10095;</button>
                 </div>
               </div>
               <div class="gallery-meta">
                 <div>
-                  <div class="gallery-meta-main">Пример эффекта C</div>
+                  <div class="gallery-meta-main">Пример обработки 3</div>
                   <div class="gallery-meta-type">статичное фото</div>
                 </div>
                 <div class="pill-dark">Фото</div>
@@ -865,9 +867,9 @@
       <!-- GIF -->
       <section class="section">
         <div class="section-header">
-          <div class="section-title">🎞 Анимация-примеры</div>
+          <div class="section-title">🎞 GIF/Видео-примеры</div>
           <div class="section-subtitle">
-            Внутри карточки: Standard / Deep / Hard. Стрелки листают и синхронизируют табы/подписи.
+            Табы внутри карточки: Standard / Deep / Hard. По клику — просмотр на весь экран со стрелками.
           </div>
         </div>
 
@@ -877,132 +879,114 @@
             <!-- CARD 1 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
                 <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" aria-label="Demo video"></video>
-
-                <button class="gif-arrow prev" type="button" aria-label="Назад">‹</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперед">›</button>
+                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4"></video>
               </div>
-
               <div class="gif-tabs">
-                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Standard" data-desc="Variant 999">Standard</button>
-                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Deep" data-desc="Variant hard999">Deep</button>
-                <button class="gif-tab" data-src="https://files.catbox.moe/gafpbc.mp4" data-title="Hard" data-desc="Variant gafpbc">Hard</button>
+                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Standard" data-desc="999">Standard</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Deep" data-desc="hard999">Deep</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Hard" data-desc="999">Hard</button>
               </div>
-
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Standard</div>
-                <div class="gif-meta-desc">Variant 999</div>
+                <div class="gif-meta-desc">999</div>
               </div>
             </article>
 
             <!-- CARD 2 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
                 <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" aria-label="Demo video"></video>
-
-                <button class="gif-arrow prev" type="button" aria-label="Назад">‹</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперед">›</button>
+                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4"></video>
               </div>
-
               <div class="gif-tabs">
-                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Standard" data-desc="Variant hard999">Standard</button>
-                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Deep" data-desc="Variant 999">Deep</button>
-                <button class="gif-tab" data-src="https://files.catbox.moe/gafpbc.mp4" data-title="Hard" data-desc="Variant gafpbc">Hard</button>
+                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Standard" data-desc="hard999">Standard</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Deep" data-desc="999">Deep</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Hard" data-desc="hard999">Hard</button>
               </div>
-
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Standard</div>
-                <div class="gif-meta-desc">Variant hard999</div>
+                <div class="gif-meta-desc">hard999</div>
               </div>
             </article>
 
             <!-- CARD 3 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
                 <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" aria-label="Demo video"></video>
-
-                <button class="gif-arrow prev" type="button" aria-label="Назад">‹</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперед">›</button>
+                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4"></video>
               </div>
-
               <div class="gif-tabs">
-                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Standard" data-desc="Variant 999">Standard</button>
-                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Deep" data-desc="Variant hard999">Deep</button>
-                <button class="gif-tab" data-src="https://files.catbox.moe/gafpbc.mp4" data-title="Hard" data-desc="Variant gafpbc">Hard</button>
+                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Standard" data-desc="999">Standard</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Deep" data-desc="hard999">Deep</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Hard" data-desc="999">Hard</button>
               </div>
-
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Standard</div>
-                <div class="gif-meta-desc">Variant 999</div>
+                <div class="gif-meta-desc">999</div>
               </div>
             </article>
 
             <!-- CARD 4 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
                 <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" aria-label="Demo video"></video>
-
-                <button class="gif-arrow prev" type="button" aria-label="Назад">‹</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперед">›</button>
+                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4"></video>
               </div>
-
               <div class="gif-tabs">
-                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Standard" data-desc="Variant hard999">Standard</button>
-                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Deep" data-desc="Variant 999">Deep</button>
-                <button class="gif-tab" data-src="https://files.catbox.moe/gafpbc.mp4" data-title="Hard" data-desc="Variant gafpbc">Hard</button>
+                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Standard" data-desc="hard999">Standard</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Deep" data-desc="999">Deep</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Hard" data-desc="hard999">Hard</button>
               </div>
-
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Standard</div>
-                <div class="gif-meta-desc">Variant hard999</div>
+                <div class="gif-meta-desc">hard999</div>
               </div>
             </article>
 
             <!-- CARD 5 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
                 <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" aria-label="Demo video"></video>
-
-                <button class="gif-arrow prev" type="button" aria-label="Назад">‹</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперед">›</button>
+                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4"></video>
               </div>
-
               <div class="gif-tabs">
-                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Standard" data-desc="Variant 999">Standard</button>
-                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Deep" data-desc="Variant hard999">Deep</button>
-                <button class="gif-tab" data-src="https://files.catbox.moe/gafpbc.mp4" data-title="Hard" data-desc="Variant gafpbc">Hard</button>
+                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Standard" data-desc="999">Standard</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Deep" data-desc="hard999">Deep</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Hard" data-desc="999">Hard</button>
               </div>
-
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Standard</div>
-                <div class="gif-meta-desc">Variant 999</div>
+                <div class="gif-meta-desc">999</div>
               </div>
             </article>
 
             <!-- CARD 6 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
                 <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" aria-label="Demo video"></video>
-
-                <button class="gif-arrow prev" type="button" aria-label="Назад">‹</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперед">›</button>
+                  src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4"></video>
               </div>
-
               <div class="gif-tabs">
-                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Standard" data-desc="Variant hard999">Standard</button>
-                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Deep" data-desc="Variant 999">Deep</button>
-                <button class="gif-tab" data-src="https://files.catbox.moe/gafpbc.mp4" data-title="Hard" data-desc="Variant gafpbc">Hard</button>
+                <button class="gif-tab active" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Standard" data-desc="hard999">Standard</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/999.mp4" data-title="Deep" data-desc="999">Deep</button>
+                <button class="gif-tab" data-src="https://cdn.jsdelivr.net/gh/koma033/my-media/video/hard999.mp4" data-title="Hard" data-desc="hard999">Hard</button>
               </div>
-
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Standard</div>
-                <div class="gif-meta-desc">Variant hard999</div>
+                <div class="gif-meta-desc">hard999</div>
               </div>
             </article>
 
@@ -1015,37 +999,33 @@
         <div class="section-header">
           <div class="section-title">Формат работы</div>
           <div class="section-subtitle">
-            Демо-описание процесса и условий (замени на свои тексты при необходимости).
+            Демо-блок описания. Можно заменить на свой текст.
           </div>
         </div>
 
         <div class="services">
           <div class="card">
-            <h3>Что здесь демонстрируется</h3>
+            <h3>Что тут сделано</h3>
             <p>
-              Карусели, сетки, кнопки, tabs-переключатели и просмотрщик (lightbox).
+              Карусели для hero и фото, табы и стрелки для GIF, плюс просмотрщик (lightbox) без контролов.
             </p>
             <ul>
-              <li>• переключение медиа</li>
-              <li>• синхронизация табов и подписи</li>
-              <li>• fullscreen просмотр</li>
-              <li>• адаптивная верстка</li>
+              <li>• просмотр фото/видео на весь экран</li>
+              <li>• стрелки в lightbox (← →) и свайп на телефоне</li>
+              <li>• табы Standard/Deep/Hard синхронизированы со стрелками</li>
             </ul>
             <div class="card-footer-note">
-              Всё в одном файле index.html.
+              Это демо-страница для обучения/экспериментов.
             </div>
           </div>
 
-          <div class="card warning">
-            <h3>Важно</h3>
+          <div class="card">
+            <h3>Примечание</h3>
             <p>
-              <strong>18+</strong> Используй только материалы, на которые у тебя есть права.
-            </p>
-            <p>
-              Этот шаблон — для экспериментов с интерфейсом.
+              В видео в lightbox нет элементов управления. Закрыть — крестик или ESC, клик по фону.
             </p>
             <div class="card-footer-note">
-              Никаких персональных данных не требуется.
+              Если что-то снова “не открывается” — обычно это 1 ошибка JS из-за кривой вставки.
             </div>
           </div>
         </div>
@@ -1053,11 +1033,11 @@
     </main>
 
     <footer>
-      <div>© 2025 · My Demo Site · 18+</div>
+      <div>© 2025 · Maxim Privat Ps · demo</div>
       <div class="footer-links">
         <a href="https://t.me/yourusername" target="_blank" rel="noopener">Telegram</a>
         <span>·</span>
-        <span>Демо-страница для тестов UI.</span>
+        <span>Demo page for learning.</span>
       </div>
     </footer>
   </div>
@@ -1134,17 +1114,17 @@
     });
   </script>
 
-  <!-- JS: GIF tabs + arrows (sync) -->
+  <!-- JS: GIF tabs + arrows (внутри карточки) -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.gif-variant').forEach(card => {
         const tabs = Array.from(card.querySelectorAll('.gif-tab'));
-        const videoEl = card.querySelector('video.gif-media-video');
-        const titleEl = card.querySelector('.gif-meta-title');
-        const descEl  = card.querySelector('.gif-meta-desc');
+        const video = card.querySelector('.gif-media-video');
+        const title = card.querySelector('.gif-meta-title');
+        const desc = card.querySelector('.gif-meta-desc');
 
-        const prevBtn = card.querySelector('.gif-arrow.prev');
-        const nextBtn = card.querySelector('.gif-arrow.next');
+        const prev = card.querySelector('.gif-arrow.prev');
+        const next = card.querySelector('.gif-arrow.next');
 
         let index = tabs.findIndex(t => t.classList.contains('active'));
         if (index < 0) index = 0;
@@ -1152,40 +1132,27 @@
         function apply(i) {
           if (!tabs.length) return;
           index = (i + tabs.length) % tabs.length;
-
           const tab = tabs[index];
+
           tabs.forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
 
-          const src = tab.dataset.src;
-          const title = tab.dataset.title || 'Standard';
-          const desc  = tab.dataset.desc || '';
+          video.src = tab.dataset.src;
+          try { video.currentTime = 0; video.play(); } catch (e) {}
 
-          if (src) {
-            videoEl.src = src;
-            try { videoEl.currentTime = 0; videoEl.play(); } catch(e){}
-          }
-
-          titleEl.textContent = title;
-          descEl.textContent  = desc;
+          title.textContent = tab.dataset.title || 'Standard';
+          desc.textContent = tab.dataset.desc || '';
         }
 
         tabs.forEach((tab, i) => {
-          tab.addEventListener('click', (e) => {
+          tab.addEventListener('click', e => {
             e.stopPropagation();
             apply(i);
           });
         });
 
-        if (prevBtn) prevBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          apply(index - 1);
-        });
-
-        if (nextBtn) nextBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          apply(index + 1);
-        });
+        if (prev) prev.addEventListener('click', e => { e.stopPropagation(); apply(index - 1); });
+        if (next) next.addEventListener('click', e => { e.stopPropagation(); apply(index + 1); });
 
         apply(index);
       });
@@ -1203,7 +1170,7 @@
       const lbNext = document.getElementById('lbNext');
       const lbWrap = document.getElementById('lightboxWrap');
 
-      let items = [];        // [{type, src, title}]
+      let items = [];
       let currentIndex = 0;
 
       function getTitleFromNode(node) {
@@ -1252,74 +1219,51 @@
         lbNext.classList.toggle('is-hidden', !showNav);
       }
 
+      // ✅ КЛЮЧЕВОЕ: тут и фото-карусели, и GIF-табы собираются в items
       function openLightboxFromNode(node) {
-  items = [];
-  currentIndex = 0;
-
-  // ✅ 1) ЕСЛИ ЭТО GIF-КАРТОЧКА — берём варианты из табов
-  const gifCard = node.closest('.gif-variant');
-  if (gifCard) {
-    const tabs = Array.from(gifCard.querySelectorAll('.gif-tab'));
-    tabs.forEach((t) => {
-      items.push({
-        type: 'video',
-        src: t.dataset.src,
-        title: (t.dataset.title || 'Variant') + (t.dataset.desc ? ' · ' + t.dataset.desc : '')
-      });
-    });
-
-    const activeTab = gifCard.querySelector('.gif-tab.active');
-    if (activeTab) {
-      const idx = tabs.findIndex(t => t === activeTab);
-      currentIndex = Math.max(0, idx);
-    } else {
-      currentIndex = 0;
-    }
-  } else {
-    // ✅ 2) ЕСЛИ ЭТО ОБЫЧНАЯ КАРУСЕЛЬ (hero/фото) — как было
-    const carousel = node.closest('.carousel');
-    if (carousel) {
-      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-      slides.forEach((s) => {
-        const it = extractItemFromSlide(s);
-        if (it) items.push(it);
-      });
-
-      const slide = node.closest('.carousel-slide');
-      if (slide) {
-        const idx = slides.findIndex(s => s === slide);
-        currentIndex = Math.max(0, idx);
-      } else {
+        items = [];
         currentIndex = 0;
-      }
-    } else {
-      // ✅ 3) ОДИНОЧНЫЙ img/video — как было
-      const tag = node.tagName.toLowerCase();
-      if (tag === 'img') items = [{ type: 'img', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
-      if (tag === 'video') items = [{ type: 'video', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
-      currentIndex = 0;
-    }
-  }
 
-  if (!items.length) return;
+        const gifCard = node.closest('.gif-variant');
+        if (gifCard) {
+          const tabs = Array.from(gifCard.querySelectorAll('.gif-tab'));
+          tabs.forEach((t) => {
+            items.push({
+              type: 'video',
+              src: t.dataset.src,
+              title: t.dataset.title || 'Variant'
+            });
+          });
 
-  document.body.classList.add('lb-open');
-  lb.classList.add('show');
-  lb.setAttribute('aria-hidden', 'false');
-
-  render(currentIndex);
-}
-
-
-          const slide = node.closest('.carousel-slide');
-          if (slide) {
-            const idx = slides.findIndex(s => s === slide);
+          const activeTab = gifCard.querySelector('.gif-tab.active');
+          if (activeTab) {
+            const idx = tabs.findIndex(t => t === activeTab);
             currentIndex = Math.max(0, idx);
+          } else {
+            currentIndex = 0;
           }
         } else {
-          const tag = node.tagName.toLowerCase();
-          if (tag === 'img') items = [{ type: 'img', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
-          if (tag === 'video') items = [{ type: 'video', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
+          const carousel = node.closest('.carousel');
+          if (carousel) {
+            const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+            slides.forEach((s) => {
+              const it = extractItemFromSlide(s);
+              if (it) items.push(it);
+            });
+
+            const slide = node.closest('.carousel-slide');
+            if (slide) {
+              const idx = slides.findIndex(s => s === slide);
+              currentIndex = Math.max(0, idx);
+            } else {
+              currentIndex = 0;
+            }
+          } else {
+            const tag = node.tagName.toLowerCase();
+            if (tag === 'img') items = [{ type: 'img', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
+            if (tag === 'video') items = [{ type: 'video', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
+            currentIndex = 0;
+          }
         }
 
         if (!items.length) return;
@@ -1360,6 +1304,7 @@
         if (e.key === 'ArrowLeft') prev();
       });
 
+      // Свайп на телефоне
       let touchX = 0;
       let touchY = 0;
       let tracking = false;
@@ -1384,22 +1329,30 @@
         const dy = endY - touchY;
 
         if (Math.abs(dy) > Math.abs(dx)) return;
+
         if (dx <= -55) next();
         if (dx >= 55) prev();
       }, { passive: true });
 
       function bindMediaClicks(root) {
-        const imgs = root.querySelectorAll('.gallery-media img');
-        const vids = root.querySelectorAll('.gallery-media video');
-
-        imgs.forEach((img) => {
+        // фото
+        root.querySelectorAll('.gallery-media img').forEach((img) => {
           img.addEventListener('click', (e) => {
             e.stopPropagation();
             openLightboxFromNode(img);
           });
         });
 
-        vids.forEach((vid) => {
+        // видео внутри обычных каруселей (hero)
+        root.querySelectorAll('.preview-frame video').forEach((vid) => {
+          vid.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightboxFromNode(vid);
+          });
+        });
+
+        // GIF/видео внутри GIF карточек
+        root.querySelectorAll('.gif-variant-media video').forEach((vid) => {
           vid.addEventListener('click', (e) => {
             e.stopPropagation();
             openLightboxFromNode(vid);
@@ -1412,4 +1365,3 @@
   </script>
 </body>
 </html>
-
