@@ -112,6 +112,11 @@
       margin-bottom: 22px;
     }
 
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+    }
+
     .hero-left h2 {
       font-size: 30px;
       font-weight: 750;
@@ -145,6 +150,20 @@
     }
 
     .hero-text .hint .arrow { font-size: 16px; opacity: 0.95; }
+
+    /* НИЖНЯЯ ПОДСКАЗКА В HERO (перенесено вниз и сделано заметнее) */
+    .hero-bottom-hint {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffd4e6;
+      font-weight: 800;
+      font-size: 15px;
+      padding-top: 10px;
+      letter-spacing: 0.01em;
+    }
+    .hero-bottom-hint .arrow { font-size: 18px; opacity: 1; }
 
     .hero-cta {
       display: flex;
@@ -711,11 +730,6 @@
           <div class="hero-text">
             <div class="strong">Демо-страница для тестов интерфейса.</div>
             <div class="muted">Карусели, табы, просмотрщик на весь экран.</div>
-
-            <div class="hint">
-              <span>Примеры — ниже</span>
-              <span class="arrow">↓</span>
-            </div>
           </div>
 
           <div class="hero-cta">
@@ -747,6 +761,12 @@
             <div class="hero-note">
               Демо-тексты. Можно заменить на свои.
             </div>
+          </div>
+
+          <!-- ПЕРЕНЕСЕНО ВНИЗ HERO -->
+          <div class="hero-bottom-hint">
+            <span>Примеры — ниже</span>
+            <span class="arrow">↓</span>
           </div>
         </div>
 
@@ -1051,6 +1071,62 @@
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 6 — Standard</div>
+                <div class="gif-meta-desc">1cum.mp4</div>
+              </div>
+            </article>
+
+            <!-- CARD 7 (Пример 7) -->
+            <article class="gallery-item gif-variant">
+              <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                  src="https://maxxximps.github.io/my-media/video/1mastur.mp4"></video>
+              </div>
+              <div class="gif-tabs">
+                <button class="gif-tab active"
+                  data-src="https://maxxximps.github.io/my-media/video/1mastur.mp4"
+                  data-title="Пример 7 — Standard"
+                  data-desc="1cum.mp4">Standard</button>
+                <button class="gif-tab"
+                  data-src="https://maxxximps.github.io/my-media/video/2mastur.mp4"
+                  data-title="Пример 7 — Deep"
+                  data-desc="2cum.mp4">Deep</button>
+                <button class="gif-tab"
+                  data-src="https://maxxximps.github.io/my-media/video/2mastur.mp4"
+                  data-title="Пример 7 — Hard"
+                  data-desc="3cum.mp4">Hard</button>
+              </div>
+              <div class="gif-meta-wide">
+                <div class="gif-meta-title">Пример 7 — Standard</div>
+                <div class="gif-meta-desc">1cum.mp4</div>
+              </div>
+            </article>
+
+            <!-- CARD 8 (Пример 8) -->
+            <article class="gallery-item gif-variant">
+              <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                  src="https://maxxximps.github.io/my-media/video/1cum.mp4"></video>
+              </div>
+              <div class="gif-tabs">
+                <button class="gif-tab active"
+                  data-src="https://maxxximps.github.io/my-media/video/1cum.mp4"
+                  data-title="Пример 8 — Standard"
+                  data-desc="1cum.mp4">Standard</button>
+                <button class="gif-tab"
+                  data-src="https://maxxximps.github.io/my-media/video/2cum.mp4"
+                  data-title="Пример 8 — Deep"
+                  data-desc="2cum.mp4">Deep</button>
+                <button class="gif-tab"
+                  data-src="https://maxxximps.github.io/my-media/video/3cum.mp4"
+                  data-title="Пример 8 — Hard"
+                  data-desc="3cum.mp4">Hard</button>
+              </div>
+              <div class="gif-meta-wide">
+                <div class="gif-meta-title">Пример 8 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
               </div>
             </article>
@@ -1430,6 +1506,3 @@
   </script>
 </body>
 </html>
-
-
-
