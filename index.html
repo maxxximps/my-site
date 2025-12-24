@@ -113,11 +113,11 @@
       background: rgba(5, 5, 14, 0.72);
       backdrop-filter: blur(12px);
       box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+
+      /* ИЗМЕНЕНО: убран горизонтальный скролл (на мобиле тоже) */
+      flex-wrap: wrap;
+      overflow-x: visible;
     }
-    .topnav::-webkit-scrollbar { display: none; }
 
     .topnav-btn {
       border: 1px solid rgba(255,255,255,0.10);
@@ -465,59 +465,11 @@
     .photo-grid .gallery-media { height: 100%; }
     .photo-grid .gallery-media img { object-fit: contain !important; background: #000; }
 
-    /* NEW: карусель всего фото-блока (стрелки СНАРУЖИ, не наезжают на фото) */
-    .photo-carousel-wrap{
-      position: relative;
-      width: 100%;
-    }
-
-    /* Вместо grid — горизонтальная лента, но визуально как 3/2/1 колонки */
+    /* ИЗМЕНЕНО: убрана глобальная карусель фото-блока -> вернули grid */
     .photo-grid{
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding: 0;
-    }
-    .photo-grid::-webkit-scrollbar{ display:none; }
-
-    /* 3 карточки на десктопе, 2 на планшете, 1 на мобиле — как было */
-    .photo-grid > .gallery-item{
-      flex: 0 0 calc((100% - (14px * 2)) / 3);
-      scroll-snap-align: start;
-    }
-
-    .photo-block-arrow{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-      font-size: 22px;
-      line-height: 1;
-      user-select: none;
-    }
-    .photo-block-arrow:hover{ background: rgba(0,0,0,0.65); }
-    /* стрелки СТРОГО снаружи контента */
-    .photo-block-arrow.prev{ left: -58px; }
-    .photo-block-arrow.next{ right: -58px; }
-
-    /* чтобы стрелки не “резались” контейнером страницы на узких экранах */
-    @media (max-width: 1200px){
-      .photo-block-arrow.prev{ left: -48px; }
-      .photo-block-arrow.next{ right: -48px; }
     }
 
     /* GIF-блок */
@@ -605,12 +557,24 @@
       border-top: 1px solid rgba(255, 255, 255, 0.04);
       display: grid;
       gap: 6px;
+
+      /* ✅ ДОБАВЛЕНО: чтобы "Заказать" стояла справа внизу как на фото */
+      position: relative;
+      padding-right: 110px;
+      min-height: 64px;
     }
 
     .gif-meta-title { font-weight: 500; color: var(--text-main); }
     .gif-meta-desc { color: var(--text-muted); font-size: 12px; }
 
-    /* NEW: actions row inside gif meta */
+    /* ✅ ДОБАВЛЕНО: позиция кнопки "Заказать" в GIF-плашке (правый нижний угол) */
+    .gif-meta-wide .pill-order.gif-order {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+    }
+
+    /* оставляю класс (но больше не используем) */
     .gif-meta-actions {
       display: flex;
       align-items: center;
@@ -694,14 +658,9 @@
     .carousel-arrow.next { right: 8px; }
 
     @media (max-width: 980px) {
-      /* как было 2 колонки — теперь 2 карточки на “экране” */
-      .photo-grid > .gallery-item{
-        flex-basis: calc((100% - 14px) / 2);
-      }
+      /* ИЗМЕНЕНО: фото-блок теперь grid: 2 колонки */
+      .photo-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .gif-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-      .photo-block-arrow.prev{ left: -44px; }
-      .photo-block-arrow.next{ right: -44px; }
     }
 
     @media (max-width: 800px) {
@@ -722,17 +681,8 @@
       .topnav-btn { padding: 10px 12px; font-size: 13px; }
       .section-title-accent .section-icon { width: 20px; height: 20px; }
 
-      /* 1 карточка на экран — как было */
-      .photo-grid > .gallery-item{
-        flex-basis: 100%;
-      }
-
-      /* стрелки остаются “снаружи”, но ближе, чтобы не уезжали за экран */
-      .photo-block-arrow{
-        width: 40px; height: 40px; font-size: 20px;
-      }
-      .photo-block-arrow.prev{ left: -18px; }
-      .photo-block-arrow.next{ right: -18px; }
+      /* ИЗМЕНЕНО: фото-блок теперь grid: 1 колонка */
+      .photo-grid{ grid-template-columns: 1fr; }
     }
 
     /* Lightbox */
@@ -994,100 +944,90 @@
         </div>
 
         <div class="media-rows">
-          <!-- NEW: стрелки карусели ВСЕГО фото-блока (стрелки СНАРУЖИ) -->
-          <div class="photo-carousel-wrap" aria-label="Фото-карусель">
-            <button class="photo-block-arrow prev" type="button" aria-label="Листать фото-блок влево">‹</button>
+          <div class="photo-grid">
+            <article class="gallery-item media-row-photo">
+              <div class="gallery-media" style="height:100%;">
+                <div class="carousel">
+                  <div class="carousel-slide active">
+                    <img src="https://maxxximps.github.io/my-media/img/1cum.jpg" alt="Пример 1 — фото 1" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="https://maxxximps.github.io/my-media/img/2cum.jpg" alt="Пример 1 — фото 2" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="https://maxxximps.github.io/my-media/img/3cum.jpg" alt="Пример 1 — фото 3" />
+                  </div>
+                  <button class="carousel-arrow prev" type="button">&#10094;</button>
+                  <button class="carousel-arrow next" type="button">&#10095;</button>
+                </div>
+              </div>
+              <div class="gallery-meta">
+                <div>
+                  <div class="gallery-meta-main">Пример обработки 1</div>
+                  <div class="gallery-meta-type">статичное фото</div>
+                </div>
+                <div class="meta-actions">
+                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
+                </div>
+              </div>
+            </article>
 
-            <div class="photo-grid">
-              <article class="gallery-item media-row-photo">
-                <div class="gallery-media" style="height:100%;">
-                  <div class="carousel">
-                    <div class="carousel-slide active">
-                      <img src="https://maxxximps.github.io/my-media/img/1cum.jpg" alt="Пример 1 — фото 1" />
-                    </div>
-                    <div class="carousel-slide">
-                      <img src="https://maxxximps.github.io/my-media/img/2cum.jpg" alt="Пример 1 — фото 2" />
-                    </div>
-                    <div class="carousel-slide">
-                      <img src="https://maxxximps.github.io/my-media/img/3cum.jpg" alt="Пример 1 — фото 3" />
-                    </div>
-                    <button class="carousel-arrow prev" type="button">&#10094;</button>
-                    <button class="carousel-arrow next" type="button">&#10095;</button>
+            <article class="gallery-item media-row-photo">
+              <div class="gallery-media" style="height:100%;">
+                <div class="carousel">
+                  <div class="carousel-slide active">
+                    <img src="https://maxxximps.github.io/my-media/img/1undress.jpg" alt="Пример 2 — фото 1" />
                   </div>
+                  <div class="carousel-slide">
+                    <img src="https://maxxximps.github.io/my-media/img/2undress.jpg" alt="Пример 2 — фото 2" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="https://maxxximps.github.io/my-media/img/3undress.jpg" alt="Пример 2 — фото 3" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="https://maxxximps.github.io/my-media/img/4undress.jpg" alt="Пример 2 — фото 4" />
+                  </div>
+                  <button class="carousel-arrow prev" type="button">&#10094;</button>
+                  <button class="carousel-arrow next" type="button">&#10095;</button>
                 </div>
-                <div class="gallery-meta">
-                  <div>
-                    <div class="gallery-meta-main">Пример обработки 1</div>
-                    <div class="gallery-meta-type">статичное фото</div>
-                  </div>
-                  <div class="meta-actions">
-                    <!-- кнопка стоит на месте удалённого слова "Фото" -->
-                    <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                  </div>
+              </div>
+              <div class="gallery-meta">
+                <div>
+                  <div class="gallery-meta-main">Пример обработки 2</div>
+                  <div class="gallery-meta-type">статичное фото</div>
                 </div>
-              </article>
+                <div class="meta-actions">
+                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
+                </div>
+              </div>
+            </article>
 
-              <article class="gallery-item media-row-photo">
-                <div class="gallery-media" style="height:100%;">
-                  <div class="carousel">
-                    <div class="carousel-slide active">
-                      <img src="https://maxxximps.github.io/my-media/img/1undress.jpg" alt="Пример 2 — фото 1" />
-                    </div>
-                    <div class="carousel-slide">
-                      <img src="https://maxxximps.github.io/my-media/img/2undress.jpg" alt="Пример 2 — фото 2" />
-                    </div>
-                    <div class="carousel-slide">
-                      <img src="https://maxxximps.github.io/my-media/img/3undress.jpg" alt="Пример 2 — фото 3" />
-                    </div>
-                    <div class="carousel-slide">
-                      <img src="https://maxxximps.github.io/my-media/img/4undress.jpg" alt="Пример 2 — фото 4" />
-                    </div>
-                    <button class="carousel-arrow prev" type="button">&#10094;</button>
-                    <button class="carousel-arrow next" type="button">&#10095;</button>
+            <article class="gallery-item media-row-photo">
+              <div class="gallery-media" style="height:100%;">
+                <div class="carousel">
+                  <div class="carousel-slide active">
+                    <img src="https://maxxximps.github.io/my-media/img/1dick.jpg" alt="Пример 3 — фото 1" />
                   </div>
+                  <div class="carousel-slide">
+                    <img src="https://maxxximps.github.io/my-media/img/2dick.jpg" alt="Пример 3 — фото 2" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="https://maxxximps.github.io/my-media/img/3dick.jpg" alt="Пример 3 — фото 3" />
+                  </div>
+                  <button class="carousel-arrow prev" type="button">&#10094;</button>
+                  <button class="carousel-arrow next" type="button">&#10095;</button>
                 </div>
-                <div class="gallery-meta">
-                  <div>
-                    <div class="gallery-meta-main">Пример обработки 2</div>
-                    <div class="gallery-meta-type">статичное фото</div>
-                  </div>
-                  <div class="meta-actions">
-                    <!-- кнопка стоит на месте удалённого слова "Фото" -->
-                    <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                  </div>
+              </div>
+              <div class="gallery-meta">
+                <div>
+                  <div class="gallery-meta-main">Пример обработки 3</div>
+                  <div class="gallery-meta-type">статичное фото</div>
                 </div>
-              </article>
-
-              <article class="gallery-item media-row-photo">
-                <div class="gallery-media" style="height:100%;">
-                  <div class="carousel">
-                    <div class="carousel-slide active">
-                      <img src="https://maxxximps.github.io/my-media/img/1dick.jpg" alt="Пример 3 — фото 1" />
-                    </div>
-                    <div class="carousel-slide">
-                      <img src="https://maxxximps.github.io/my-media/img/2dick.jpg" alt="Пример 3 — фото 2" />
-                    </div>
-                    <div class="carousel-slide">
-                      <img src="https://maxxximps.github.io/my-media/img/3dick.jpg" alt="Пример 3 — фото 3" />
-                    </div>
-                    <button class="carousel-arrow prev" type="button">&#10094;</button>
-                    <button class="carousel-arrow next" type="button">&#10095;</button>
-                  </div>
+                <div class="meta-actions">
+                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
                 </div>
-                <div class="gallery-meta">
-                  <div>
-                    <div class="gallery-meta-main">Пример обработки 3</div>
-                    <div class="gallery-meta-type">статичное фото</div>
-                  </div>
-                  <div class="meta-actions">
-                    <!-- кнопка стоит на месте удалённого слова "Фото" -->
-                    <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <button class="photo-block-arrow next" type="button" aria-label="Листать фото-блок вправо">›</button>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -1138,10 +1078,8 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 1 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <!-- ✅ КНОПКА ТЕПЕРЬ КАК НА ФОТО: справа внизу -->
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1178,10 +1116,7 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 2 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1210,10 +1145,7 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 3 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1242,10 +1174,7 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 4 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1274,10 +1203,7 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 5 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1306,10 +1232,7 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 6 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1338,10 +1261,7 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 7 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1370,10 +1290,7 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 8 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <div class="gif-meta-actions">
-                  <!-- кнопка стоит на месте удалённого слова "Видео" -->
-                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
-                </div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
 
@@ -1588,7 +1505,6 @@
         if (nextBtn) nextBtn.addEventListener('click', next);
         if (prevBtn) prevBtn.addEventListener('click', prev);
 
-        // NEW: свайп по самой карусели (hero + фото внутри карточки)
         let sx = 0, sy = 0, tracking = false;
 
         carousel.addEventListener('touchstart', (e) => {
@@ -1608,7 +1524,7 @@
           const dx = ex - sx;
           const dy = ey - sy;
 
-          if (Math.abs(dy) > Math.abs(dx)) return; // вертикальный скролл не трогаем
+          if (Math.abs(dy) > Math.abs(dx)) return;
           if (dx <= -45) next();
           if (dx >= 45) prev();
         }, { passive: true });
@@ -1618,63 +1534,7 @@
     });
   </script>
 
-  <!-- JS: карусель ВСЕГО фото-блока (стрелки + свайп/скролл) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const wrap = document.querySelector('.photo-carousel-wrap');
-      if (!wrap) return;
-
-      const track = wrap.querySelector('.photo-grid');
-      const prevBtn = wrap.querySelector('.photo-block-arrow.prev');
-      const nextBtn = wrap.querySelector('.photo-block-arrow.next');
-      if (!track) return;
-
-      function stepSize() {
-        // листаем “на одну карточку” (ширина первой + gap)
-        const first = track.querySelector('.gallery-item');
-        if (!first) return track.clientWidth;
-        const gap = 14;
-        return first.getBoundingClientRect().width + gap;
-      }
-
-      function scrollNext() {
-        track.scrollBy({ left: stepSize(), behavior: 'smooth' });
-      }
-      function scrollPrev() {
-        track.scrollBy({ left: -stepSize(), behavior: 'smooth' });
-      }
-
-      if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); scrollNext(); });
-      if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); scrollPrev(); });
-
-      // Свайп по ленте фото-блока (на мобиле и тачпадах)
-      let sx = 0, sy = 0, tracking = false;
-
-      track.addEventListener('touchstart', (e) => {
-        if (!e.touches || !e.touches.length) return;
-        tracking = true;
-        sx = e.touches[0].clientX;
-        sy = e.touches[0].clientY;
-      }, { passive: true });
-
-      track.addEventListener('touchend', (e) => {
-        if (!tracking) return;
-        tracking = false;
-        if (!e.changedTouches || !e.changedTouches.length) return;
-
-        const ex = e.changedTouches[0].clientX;
-        const ey = e.changedTouches[0].clientY;
-        const dx = ex - sx;
-        const dy = ey - sy;
-
-        if (Math.abs(dy) > Math.abs(dx)) return;
-        if (dx <= -55) scrollNext();
-        if (dx >= 55) scrollPrev();
-      }, { passive: true });
-    });
-  </script>
-
-  <!-- JS: GIF tabs + arrows -->
+  <!-- ✅ JS: GIF tabs + arrows (исправлен autoplay) -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.gif-variant').forEach(card => {
@@ -1689,6 +1549,15 @@
         let index = tabs.findIndex(t => t.classList.contains('active'));
         if (index < 0) index = 0;
 
+        function forcePlay(v) {
+          if (!v) return;
+          v.muted = true;
+          v.playsInline = true;
+          v.autoplay = true;
+          v.loop = true;
+          try { v.play(); } catch (e) {}
+        }
+
         function apply(i) {
           if (!tabs.length) return;
           index = (i + tabs.length) % tabs.length;
@@ -1697,8 +1566,26 @@
           tabs.forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
 
+          // ✅ ключевое: load() + play()
+          video.pause();
+          video.setAttribute('muted', '');
+          video.muted = true;
+          video.playsInline = true;
+          video.autoplay = true;
+          video.loop = true;
+
           video.src = tab.dataset.src;
-          try { video.currentTime = 0; video.play(); } catch (e) {}
+          try { video.load(); } catch (e) {}
+
+          const kick = () => {
+            try { video.currentTime = 0; } catch (e) {}
+            const p = video.play();
+            if (p && typeof p.then === 'function') p.catch(() => {});
+          };
+
+          // сразу + после загрузки данных
+          kick();
+          video.addEventListener('loadeddata', kick, { once: true });
 
           title.textContent = tab.dataset.title || 'Standard';
           desc.textContent = tab.dataset.desc || '';
@@ -1715,6 +1602,25 @@
         if (next) next.addEventListener('click', e => { e.stopPropagation(); apply(index + 1); });
 
         apply(index);
+        forcePlay(video);
+      });
+
+      // ✅ “пинок” всем гифкам после входа на страницу
+      setTimeout(() => {
+        document.querySelectorAll('.gif-media-video').forEach(v => {
+          v.muted = true;
+          v.playsInline = true;
+          v.autoplay = true;
+          v.loop = true;
+          try { v.play(); } catch (e) {}
+        });
+      }, 120);
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState !== 'visible') return;
+        document.querySelectorAll('.gif-media-video').forEach(v => {
+          try { v.play(); } catch (e) {}
+        });
       });
     });
   </script>
