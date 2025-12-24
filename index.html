@@ -113,8 +113,6 @@
       background: rgba(5, 5, 14, 0.72);
       backdrop-filter: blur(12px);
       box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-
-      /* ИЗМЕНЕНО: убран горизонтальный скролл (на мобиле тоже) */
       flex-wrap: wrap;
       overflow-x: visible;
     }
@@ -417,16 +415,6 @@
       letter-spacing: 0.08em;
     }
 
-    .pill-dark {
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(18, 18, 28, 0.9);
-      color: var(--text-muted);
-      font-size: 11px;
-      white-space: nowrap;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
     /* NEW: action pills area */
     .meta-actions {
       display: inline-flex;
@@ -465,7 +453,6 @@
     .photo-grid .gallery-media { height: 100%; }
     .photo-grid .gallery-media img { object-fit: contain !important; background: #000; }
 
-    /* ИЗМЕНЕНО: убрана глобальная карусель фото-блока -> вернули grid */
     .photo-grid{
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -557,8 +544,6 @@
       border-top: 1px solid rgba(255, 255, 255, 0.04);
       display: grid;
       gap: 6px;
-
-      /* ✅ ДОБАВЛЕНО: чтобы "Заказать" стояла справа внизу как на фото */
       position: relative;
       padding-right: 110px;
       min-height: 64px;
@@ -567,20 +552,10 @@
     .gif-meta-title { font-weight: 500; color: var(--text-main); }
     .gif-meta-desc { color: var(--text-muted); font-size: 12px; }
 
-    /* ✅ ДОБАВЛЕНО: позиция кнопки "Заказать" в GIF-плашке (правый нижний угол) */
     .gif-meta-wide .pill-order.gif-order {
       position: absolute;
       right: 12px;
       bottom: 12px;
-    }
-
-    /* оставляю класс (но больше не используем) */
-    .gif-meta-actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 2px;
     }
 
     .services {
@@ -658,7 +633,6 @@
     .carousel-arrow.next { right: 8px; }
 
     @media (max-width: 980px) {
-      /* ИЗМЕНЕНО: фото-блок теперь grid: 2 колонки */
       .photo-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .gif-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
@@ -680,8 +654,6 @@
       .topnav { padding: 9px; }
       .topnav-btn { padding: 10px 12px; font-size: 13px; }
       .section-title-accent .section-icon { width: 20px; height: 20px; }
-
-      /* ИЗМЕНЕНО: фото-блок теперь grid: 1 колонка */
       .photo-grid{ grid-template-columns: 1fr; }
     }
 
@@ -819,8 +791,6 @@
     .preview-frame video {
       cursor: zoom-in;
     }
-
-    /* ВАЖНО: твои пропорции мобилки из исходника оставлены. */
   </style>
 </head>
 
@@ -904,13 +874,13 @@
           <div class="preview-frame">
             <div class="carousel">
               <div class="carousel-slide active">
-                <video src="https://cdn.jsdelivr.net/gh/maxxximps/my-media/video/999.mp4" autoplay muted loop playsinline preload="auto"></video>
+                <video src="https://cdn.jsdelivr.net/gh/maxxximps/my-media/video/999.mp4" autoplay muted loop playsinline preload="metadata"></video>
               </div>
               <div class="carousel-slide">
-                <video src="https://cdn.jsdelivr.net/gh/maxxximps/my-media/video/hard999.mp4" autoplay muted loop playsinline preload="auto"></video>
+                <video src="https://cdn.jsdelivr.net/gh/maxxximps/my-media/video/hard999.mp4" autoplay muted loop playsinline preload="metadata"></video>
               </div>
               <div class="carousel-slide">
-                <video src="https://files.catbox.moe/gafpbc.mp4" autoplay muted loop playsinline preload="auto"></video>
+                <video src="https://files.catbox.moe/gafpbc.mp4" autoplay muted loop playsinline preload="metadata"></video>
               </div>
 
               <button class="carousel-arrow prev" type="button">&#10094;</button>
@@ -1058,7 +1028,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1cum.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1078,7 +1048,6 @@
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Пример 1 — Standard</div>
                 <div class="gif-meta-desc">1cum.mp4</div>
-                <!-- ✅ КНОПКА ТЕПЕРЬ КАК НА ФОТО: справа внизу -->
                 <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
               </div>
             </article>
@@ -1088,7 +1057,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1dick.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1125,7 +1094,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1undress.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1154,7 +1123,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1sex.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1183,7 +1152,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1raz.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1212,7 +1181,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1kiss.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1241,7 +1210,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1mastur.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1270,7 +1239,7 @@
               <div class="gallery-media gif-variant-media">
                 <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
                 <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
+                <video class="gif-media-video" autoplay muted loop playsinline preload="metadata"
                   src="https://maxxximps.github.io/my-media/video/1cum.mp4"></video>
               </div>
               <div class="gif-tabs">
@@ -1415,6 +1384,98 @@
     document.addEventListener('dragstart', function (e) { e.preventDefault(); });
   </script>
 
+  <!-- ✅ ОБЩИЙ AUTOPLAY FIX ДЛЯ iOS: атрибуты + разблокировка по первому тапу + допинок -->
+  <script>
+    (function () {
+      function hardenVideo(v) {
+        if (!v) return;
+        // важно: именно атрибуты
+        v.setAttribute('muted', '');
+        v.muted = true;
+
+        v.setAttribute('playsinline', '');
+        v.playsInline = true;
+
+        v.setAttribute('autoplay', '');
+        v.autoplay = true;
+
+        v.setAttribute('loop', '');
+        v.loop = true;
+
+        v.removeAttribute('controls');
+        v.controls = false;
+
+        if (!v.getAttribute('preload')) v.setAttribute('preload', 'metadata');
+      }
+
+      async function tryPlay(v) {
+        if (!v) return false;
+        hardenVideo(v);
+
+        try { v.load(); } catch (e) {}
+
+        try {
+          const p = v.play();
+          if (p && typeof p.then === 'function') await p;
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function allVideos() {
+        return Array.from(document.querySelectorAll('video'));
+      }
+
+      // 1) сразу “ужесточаем” всем видео атрибуты
+      document.addEventListener('DOMContentLoaded', () => {
+        allVideos().forEach(hardenVideo);
+
+        // 2) пробуем сразу запустить все (часть iOS позволит)
+        setTimeout(() => { allVideos().forEach(v => tryPlay(v)); }, 50);
+
+        // 3) если видео в зоне видимости — пробуем ещё раз
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) tryPlay(e.target);
+            });
+          }, { threshold: 0.25 });
+
+          document.querySelectorAll('.gif-media-video, .preview-frame video').forEach(v => io.observe(v));
+        }
+      });
+
+      // 4) ГЛАВНОЕ: разблокировка iOS по первому взаимодействию пользователя
+      let unlocked = false;
+      async function unlockAutoplayOnce() {
+        if (unlocked) return;
+        unlocked = true;
+
+        // пробуем запустить все сразу — после тапа iOS обычно разрешает
+        const vids = allVideos();
+        for (const v of vids) await tryPlay(v);
+      }
+
+      // любые жесты
+      ['touchstart', 'touchend', 'pointerdown', 'mousedown', 'keydown', 'scroll'].forEach(ev => {
+        window.addEventListener(ev, unlockAutoplayOnce, { passive: true, once: true });
+      });
+
+      // если вернулся на вкладку — допнуть
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          allVideos().forEach(v => tryPlay(v));
+        }
+      });
+
+      // экспорт для других скриптов
+      window.__tryPlayVideo = tryPlay;
+      window.__hardenVideo = hardenVideo;
+      window.__unlockAutoplayOnce = unlockAutoplayOnce;
+    })();
+  </script>
+
   <!-- JS: верхние разделы -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -1475,21 +1536,26 @@
 
         let index = 0;
 
-        function showSlide(i) {
+        async function showSlide(i) {
           slides.forEach((slide, idx) => {
             const active = idx === i;
             slide.classList.toggle('active', active);
 
             const video = slide.querySelector('video');
             if (video) {
-              if (active) {
-                try { video.currentTime = 0; video.play(); } catch (e) {}
-              } else {
-                try { video.pause(); } catch (e) {}
-              }
+              if (!active) { try { video.pause(); } catch (e) {} }
             }
           });
+
           index = i;
+
+          const activeVideo = slides[index].querySelector('video');
+          if (activeVideo) {
+            // важный запуск через общий iOS-fix
+            try { activeVideo.currentTime = 0; } catch (e) {}
+            if (window.__tryPlayVideo) window.__tryPlayVideo(activeVideo);
+            else { try { activeVideo.play(); } catch (e) {} }
+          }
         }
 
         function next(e) {
@@ -1534,7 +1600,7 @@
     });
   </script>
 
-  <!-- ✅ JS: GIF tabs + arrows (исправлен autoplay) -->
+  <!-- ✅ JS: GIF tabs + arrows (мобилка iOS autoplay fixed) -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.gif-variant').forEach(card => {
@@ -1549,46 +1615,38 @@
         let index = tabs.findIndex(t => t.classList.contains('active'));
         if (index < 0) index = 0;
 
-        function forcePlay(v) {
-          if (!v) return;
-          v.muted = true;
-          v.playsInline = true;
-          v.autoplay = true;
-          v.loop = true;
-          try { v.play(); } catch (e) {}
+        function setMeta(tab) {
+          title.textContent = tab.dataset.title || 'Standard';
+          desc.textContent = tab.dataset.desc || '';
         }
 
-        function apply(i) {
+        async function apply(i) {
           if (!tabs.length) return;
           index = (i + tabs.length) % tabs.length;
-          const tab = tabs[index];
 
+          const tab = tabs[index];
           tabs.forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
 
-          // ✅ ключевое: load() + play()
-          video.pause();
-          video.setAttribute('muted', '');
-          video.muted = true;
-          video.playsInline = true;
-          video.autoplay = true;
-          video.loop = true;
+          // 1) меняем src
+          const newSrc = tab.dataset.src;
+          if (video.getAttribute('src') !== newSrc) {
+            // чтобы iOS точно подхватил новый файл
+            try { video.pause(); } catch (e) {}
+            video.setAttribute('src', newSrc);
+            try { video.load(); } catch (e) {}
+          }
 
-          video.src = tab.dataset.src;
-          try { video.load(); } catch (e) {}
+          // 2) мета
+          setMeta(tab);
 
-          const kick = () => {
-            try { video.currentTime = 0; } catch (e) {}
-            const p = video.play();
-            if (p && typeof p.then === 'function') p.catch(() => {});
-          };
-
-          // сразу + после загрузки данных
-          kick();
-          video.addEventListener('loadeddata', kick, { once: true });
-
-          title.textContent = tab.dataset.title || 'Standard';
-          desc.textContent = tab.dataset.desc || '';
+          // 3) главный запуск через общий iOS-fix
+          // (после первого касания по странице оно “разлочится” и начнёт играть само)
+          if (window.__tryPlayVideo) {
+            window.__tryPlayVideo(video);
+          } else {
+            try { video.play(); } catch (e) {}
+          }
         }
 
         tabs.forEach((tab, i) => {
@@ -1601,26 +1659,21 @@
         if (prev) prev.addEventListener('click', e => { e.stopPropagation(); apply(index - 1); });
         if (next) next.addEventListener('click', e => { e.stopPropagation(); apply(index + 1); });
 
+        // старт
         apply(index);
-        forcePlay(video);
-      });
 
-      // ✅ “пинок” всем гифкам после входа на страницу
-      setTimeout(() => {
-        document.querySelectorAll('.gif-media-video').forEach(v => {
-          v.muted = true;
-          v.playsInline = true;
-          v.autoplay = true;
-          v.loop = true;
-          try { v.play(); } catch (e) {}
-        });
-      }, 120);
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState !== 'visible') return;
-        document.querySelectorAll('.gif-media-video').forEach(v => {
-          try { v.play(); } catch (e) {}
-        });
+        // если карточка стала видимой — допнуть
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((en) => {
+              if (en.isIntersecting) {
+                if (window.__tryPlayVideo) window.__tryPlayVideo(video);
+                else { try { video.play(); } catch (e) {} }
+              }
+            });
+          }, { threshold: 0.35 });
+          io.observe(video);
+        }
       });
     });
   </script>
@@ -1675,9 +1728,14 @@
           v.loop = true;
           v.muted = true;
           v.playsInline = true;
+          v.setAttribute('muted','');
+          v.setAttribute('playsinline','');
+          v.setAttribute('autoplay','');
+          v.setAttribute('loop','');
           v.controls = false;
           lbMedia.appendChild(v);
-          try { v.play(); } catch (e) {}
+          if (window.__tryPlayVideo) window.__tryPlayVideo(v);
+          else { try { v.play(); } catch (e) {} }
         }
 
         const showNav = items.length > 1;
