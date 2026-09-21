@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html data-mp-original-sha="b8f6e92ce20f9fdd05ccb9f6d7b2b9a702b1b13d" data-mp-revision="original-editor-20260921" data-mp-theme="original" lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Maxim Privat Ps</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Обработка фото, монтаж и AI-анимация. Примеры ниже." />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Обработка фото, монтаж и AI-анимация. Примеры ниже.">
 
   <style>
     :root {
@@ -812,7 +812,61 @@
       cursor: zoom-in;
     }
   </style>
-</head>
+<style id="mp-editor-style">/* Styles are restricted to the editor. Original palette is the default. */
+html[data-mp-theme=wine]{--accent:#db7a9f;--accent-soft:#db7a9f26;--text-main:#fff0f6;--text-muted:#c4afbc;--border-soft:#49313f}
+html[data-mp-theme=plum]{--accent:#bd9ce9;--accent-soft:#bd9ce926;--text-main:#f6f0ff;--text-muted:#bfb0d1;--border-soft:#443451}
+html[data-mp-theme=graphite]{--accent:#b7c8d2;--accent-soft:#b7c8d226;--text-main:#f0f5f8;--text-muted:#b3c0c9;--border-soft:#34414a}
+html[data-mp-theme=amber]{--accent:#e7b180;--accent-soft:#e7b18026;--text-main:#fff4e9;--text-muted:#c6b6a6;--border-soft:#493b30}
+html[data-mp-theme=wine] body{background:radial-gradient(circle at top,#35202c 0,#100c10 42%)}
+html[data-mp-theme=plum] body{background:radial-gradient(circle at top,#2e2241 0,#100d17 42%)}
+html[data-mp-theme=graphite] body{background:radial-gradient(circle at top,#27323a 0,#0b0f12 42%)}
+html[data-mp-theme=amber] body{background:radial-gradient(circle at top,#3a2b21 0,#120e0c 42%)}
+html[data-mp-theme]:not([data-mp-theme=original]) .btn-main,html[data-mp-theme]:not([data-mp-theme=original]) .pill-order{background:var(--accent);color:#171119;box-shadow:none;border-color:var(--accent)}
+html[data-mp-theme]:not([data-mp-theme=original]) .btn-secondary{background:var(--accent-soft);color:var(--text-main);border-color:var(--border-soft)}
+html[data-mp-theme]:not([data-mp-theme=original]) .logo{background:var(--accent);color:#171119;box-shadow:0 0 20px var(--accent-soft)}
+html[data-mp-theme]:not([data-mp-theme=original]) .accent,html[data-mp-theme]:not([data-mp-theme=original]) .section-title-accent{color:var(--accent)}
+.mp-admin,.mp-admin *{box-sizing:border-box}
+.mp-admin{font:14px/1.5 system-ui,-apple-system,sans-serif;color:#f5edf2}
+.mp-admin button,.mp-admin input,.mp-admin textarea,.mp-admin select{font:inherit}
+.mp-admin button{cursor:pointer;touch-action:manipulation}
+.mp-admin button:focus-visible,.mp-admin a:focus-visible,.mp-admin input:focus-visible,.mp-admin textarea:focus-visible,.mp-admin select:focus-visible{outline:2px solid #f0bad4;outline-offset:3px}
+.mp-admin button:disabled{opacity:.45;cursor:wait}
+.mp-admin .mp-button{border:1px solid #534353;background:#302632;color:#f5edf2;border-radius:10px;padding:10px 14px;min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;white-space:normal}
+.mp-admin .mp-primary{background:#e7adc9;color:#22171e;border-color:#e7adc9;font-weight:600}
+.mp-admin .mp-danger,.mp-admin .mp-button[data-danger=true]{color:#ffb0b0;border-color:#8a4b58;background:#42252c}
+.mp-admin .mp-muted{color:#c3b2bf;font-size:12px}
+.mp-admin-entry{position:fixed;bottom:18px;right:18px;z-index:1000;box-shadow:0 6px 35px #0009;border-radius:12px}
+.mp-admin-bar{position:fixed;bottom:0;left:0;right:0;z-index:1000;background:#201923;border-top:1px solid #5a4054;padding:12px 18px max(12px,env(safe-area-inset-bottom));display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;box-shadow:0 -5px 25px #0006}
+.mp-admin-bar .mp-button{font-size:12px}.mp-admin-bar .mp-save-status{font-size:11px;max-width:170px;color:#cbb7c6}
+body.mp-is-editing{padding-bottom:110px}
+.mp-admin-dialog{background:#201923;color:#f5edf2;border:1px solid #534353;border-radius:20px;width:min(880px,calc(100% - 24px));max-height:90dvh;margin:auto;padding:0;box-shadow:0 30px 100px #000a;z-index:1100}
+.mp-admin-dialog::backdrop{background:#09060dce;backdrop-filter:blur(5px)}
+.mp-admin-dialog .mp-dialog-head{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:18px 22px;border-bottom:1px solid #493847;position:sticky;top:0;background:#201923;z-index:3}
+.mp-admin-dialog h2{font-size:21px;font-weight:600;margin:0;color:#fff1fa}.mp-admin-dialog h3{font-size:15px;margin:15px 0 10px;color:#f9e5f2}
+.mp-admin-dialog .mp-dialog-body{padding:20px 22px}.mp-admin-dialog p{margin:0 0 14px;font-size:13px;color:#cbb7c6}
+.mp-admin-dialog label{display:block;font-size:12px;color:#e6d4e0;margin:12px 0 6px}
+.mp-admin-dialog input:not([type=file]),.mp-admin-dialog select,.mp-admin-dialog textarea{width:100%;padding:11px 12px;border:1px solid #594456;border-radius:9px;background:#130f18;color:#fff1fa;min-height:44px}
+.mp-admin-dialog textarea{min-height:80px;resize:vertical}.mp-admin-dialog a{color:#e7adc9}
+.mp-admin-dialog .mp-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin-top:20px}
+.mp-admin-dialog .mp-notice{padding:13px;border:1px solid #554053;background:#17111c;border-radius:10px;margin-bottom:15px;font-size:12px;color:#cdb7c7;white-space:pre-line}
+.mp-admin-dialog .mp-media-list{display:grid;gap:12px;margin:18px 0}
+.mp-admin-dialog .mp-media-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;border:1px solid #594456;border-radius:12px;padding:12px;background:#18111e}
+.mp-admin-dialog .mp-media-preview{width:130px;height:145px;object-fit:contain;background:#100c15;border-radius:8px}.mp-admin-dialog .mp-media-row label{margin-top:5px}
+.mp-admin-dialog .mp-row-buttons{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.mp-admin-dialog .mp-row-buttons .mp-button{font-size:12px;min-height:40px;padding:7px 11px}
+.mp-admin-dialog .mp-collection-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:14px;border:1px solid #534353;border-radius:10px;margin:9px 0;background:#19131e}
+.mp-admin-dialog .mp-collection-row small{display:block;color:#c2aebe;margin-top:4px}
+.mp-admin-dialog .mp-swatches{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mp-admin-dialog .mp-swatch{display:flex;align-items:center;gap:10px;text-align:left}.mp-admin-dialog .mp-swatch i{width:22px;height:22px;background:var(--mp-color);border-radius:50%;display:block;flex-shrink:0}
+.mp-admin-dialog .mp-swatch[aria-pressed=true]{outline:2px solid #f0bad4}
+.mp-admin-dialog .mp-status{white-space:pre-line;overflow-wrap:anywhere;font-size:13px;color:#f0c6df;margin-top:15px}
+.mp-admin-dialog .mp-text-field{padding:9px 0;border-bottom:1px solid #392c3b}.mp-admin-dialog .mp-text-field label{margin-top:0}
+.mp-admin-dialog .mp-sticky-actions{position:sticky;bottom:-20px;background:#201923;padding:14px 0;border-top:1px solid #493847}
+.mp-inline-tools{display:flex;gap:5px;padding:7px 0}.mp-inline-tools .mp-button{font-size:11px;padding:7px 10px;min-height:36px}
+.mp-admin-toast{position:fixed;z-index:2000;bottom:115px;left:50%;transform:translateX(-50%);padding:12px 18px;max-width:min(600px,90%);border-radius:12px;background:#38283a;border:1px solid #71546b;box-shadow:0 5px 25px #0007;font-size:13px}
+@media(max-width:600px){.mp-admin-dialog{width:calc(100% - 12px);border-radius:15px;max-height:94dvh}.mp-admin-dialog .mp-dialog-head,.mp-admin-dialog .mp-dialog-body{padding:14px}.mp-admin-dialog .mp-media-row{grid-template-columns:76px minmax(0,1fr);gap:10px;padding:9px}.mp-admin-dialog .mp-media-preview{width:76px;height:96px}.mp-admin-dialog input,.mp-admin-dialog select,.mp-admin-dialog textarea{font-size:16px!important}.mp-admin-bar{gap:5px;padding:8px 8px max(8px,env(safe-area-inset-bottom))}.mp-admin-bar .mp-button{font-size:11px;min-height:40px;padding:7px 9px}.mp-admin-bar .mp-save-status{display:none}.mp-admin-dialog .mp-collection-row{grid-template-columns:minmax(0,1fr)}.mp-admin-dialog .mp-sticky-actions{bottom:-14px}.mp-admin-dialog h2{font-size:18px}.mp-admin-dialog .mp-row-buttons .mp-button{min-height:44px}}
+
+.gif-grid .gif-variant-media img.gif-media-video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+</style></head>
 
 <body data-view="all">
   <div class="page">
@@ -845,7 +899,7 @@
         <div class="hero-left">
           <h2>
             <span class="accent">ЭРОТИЧЕСКИЙ ФОТОШОП</span><br>
-            Монтаж / AI&nbsp;Анимация
+            Монтаж / AI&#160;Анимация
           </h2>
 
           <div class="hero-text">
@@ -907,8 +961,8 @@
                 <video src="https://maxxximps.github.io/my-media/video/1undress_fast.mp4" autoplay muted loop playsinline preload="auto"></video>
               </div>
 
-              <button class="carousel-arrow prev" type="button">&#10094;</button>
-              <button class="carousel-arrow next" type="button">&#10095;</button>
+              <button class="carousel-arrow prev" type="button">❮</button>
+              <button class="carousel-arrow next" type="button">❯</button>
             </div>
 
             <div class="floating-label">
@@ -925,8 +979,8 @@
           <div class="section-title section-title-accent">
             <span class="section-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 7h-3.2a2 2 0 0 1-1.6-.8l-1-1.4A2 2 0 0 0 12.6 4H11.4a2 2 0 0 0-1.6.8l-1 1.4A2 2 0 0 1 7.2 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"/>
-                <circle cx="12" cy="13" r="3.2"/>
+                <path d="M20 7h-3.2a2 2 0 0 1-1.6-.8l-1-1.4A2 2 0 0 0 12.6 4H11.4a2 2 0 0 0-1.6.8l-1 1.4A2 2 0 0 1 7.2 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z" />
+                <circle cx="12" cy="13" r="3.2" />
               </svg>
             </span>
             Фото-примеры
@@ -943,16 +997,16 @@
               <div class="gallery-media" style="height:100%;">
                 <div class="carousel">
                   <div class="carousel-slide active">
-                    <img src="https://maxxximps.github.io/my-media/img/1cum.jpg" alt="Пример 1 — фото 1" />
+                    <img src="https://maxxximps.github.io/my-media/img/1cum.jpg" alt="Пример 1 — фото 1">
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://maxxximps.github.io/my-media/img/2cum.jpg" alt="Пример 1 — фото 2" />
+                    <img src="https://maxxximps.github.io/my-media/img/2cum.jpg" alt="Пример 1 — фото 2">
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://maxxximps.github.io/my-media/img/3cum.jpg" alt="Пример 1 — фото 3" />
+                    <img src="https://maxxximps.github.io/my-media/img/3cum.jpg" alt="Пример 1 — фото 3">
                   </div>
-                  <button class="carousel-arrow prev" type="button">&#10094;</button>
-                  <button class="carousel-arrow next" type="button">&#10095;</button>
+                  <button class="carousel-arrow prev" type="button">❮</button>
+                  <button class="carousel-arrow next" type="button">❯</button>
                 </div>
               </div>
               <div class="gallery-meta">
@@ -970,19 +1024,19 @@
               <div class="gallery-media" style="height:100%;">
                 <div class="carousel">
                   <div class="carousel-slide active">
-                    <img src="https://maxxximps.github.io/my-media/img/3undress.jpg" alt="Пример 2 — фото 1" />
+                    <img src="https://maxxximps.github.io/my-media/img/3undress.jpg" alt="Пример 2 — фото 1">
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://maxxximps.github.io/my-media/img/4undress.jpg" alt="Пример 2 — фото 2" />
+                    <img src="https://maxxximps.github.io/my-media/img/4undress.jpg" alt="Пример 2 — фото 2">
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://maxxximps.github.io/my-media/img/1undress.jpg" alt="Пример 2 — фото 3" />
+                    <img src="https://maxxximps.github.io/my-media/img/1undress.jpg" alt="Пример 2 — фото 3">
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://maxxximps.github.io/my-media/img/2undress.jpg" alt="Пример 2 — фото 4" />
+                    <img src="https://maxxximps.github.io/my-media/img/2undress.jpg" alt="Пример 2 — фото 4">
                   </div>
-                  <button class="carousel-arrow prev" type="button">&#10094;</button>
-                  <button class="carousel-arrow next" type="button">&#10095;</button>
+                  <button class="carousel-arrow prev" type="button">❮</button>
+                  <button class="carousel-arrow next" type="button">❯</button>
                 </div>
               </div>
               <div class="gallery-meta">
@@ -1000,16 +1054,16 @@
               <div class="gallery-media" style="height:100%;">
                 <div class="carousel">
                   <div class="carousel-slide active">
-                    <img src="https://maxxximps.github.io/my-media/img/1dick.jpg" alt="Пример 3 — фото 1" />
+                    <img src="https://maxxximps.github.io/my-media/img/1dick.jpg" alt="Пример 3 — фото 1">
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://maxxximps.github.io/my-media/img/2dick.jpg" alt="Пример 3 — фото 2" />
+                    <img src="https://maxxximps.github.io/my-media/img/2dick.jpg" alt="Пример 3 — фото 2">
                   </div>
                   <div class="carousel-slide">
-                    <img src="https://maxxximps.github.io/my-media/img/3dick.jpg" alt="Пример 3 — фото 3" />
+                    <img src="https://maxxximps.github.io/my-media/img/3dick.jpg" alt="Пример 3 — фото 3">
                   </div>
-                  <button class="carousel-arrow prev" type="button">&#10094;</button>
-                  <button class="carousel-arrow next" type="button">&#10095;</button>
+                  <button class="carousel-arrow prev" type="button">❮</button>
+                  <button class="carousel-arrow next" type="button">❯</button>
                 </div>
               </div>
               <div class="gallery-meta">
@@ -1032,8 +1086,8 @@
           <div class="section-title section-title-accent">
             <span class="section-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="6.5" width="14" height="11" rx="2"/>
-                <path d="M17 10l4-2v8l-4-2z"/>
+                <rect x="3" y="6.5" width="14" height="11" rx="2" />
+                <path d="M17 10l4-2v8l-4-2z" />
               </svg>
             </span>
             GIF/Видео-примеры
@@ -1050,24 +1104,14 @@
             <!-- CARD 1 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1cum.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1cum.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/1cum_fast.mp4"
-                  data-title="Сперма на лицо"
-                  data-desc="Стандарт">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/2cum_fast.mp4"
-                  data-title="Сперма на лицо"
-                  data-desc="Много спермы">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/3cum_fast.mp4"
-                  data-title="Сперма на лицо"
-                  data-desc="Смена кадра">3</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/1cum_fast.mp4" data-title="Сперма на лицо" data-desc="Стандарт">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/2cum_fast.mp4" data-title="Сперма на лицо" data-desc="Много спермы">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/3cum_fast.mp4" data-title="Сперма на лицо" data-desc="Смена кадра">3</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Сперма на лицо</div>
@@ -1079,32 +1123,16 @@
             <!-- CARD 2 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1dick.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1dick.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/1dick_fast.mp4"
-                  data-title="Минет"
-                  data-desc="Стандарт">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/2dick_fast.mp4"
-                  data-title="Минет"
-                  data-desc="Глубокий минет">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/3dick_fast.mp4"
-                  data-title="Минет"
-                  data-desc="Грубый минет">3</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/4dick_fast.mp4"
-                  data-title="Минет"
-                  data-desc="В щеку">4</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/5dick_fast.mp4"
-                  data-title="Минет"
-                  data-desc="Черный член">5</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/1dick_fast.mp4" data-title="Минет" data-desc="Стандарт">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/2dick_fast.mp4" data-title="Минет" data-desc="Глубокий минет">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/3dick_fast.mp4" data-title="Минет" data-desc="Грубый минет">3</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/4dick_fast.mp4" data-title="Минет" data-desc="В щеку">4</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/5dick_fast.mp4" data-title="Минет" data-desc="Черный член">5</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Минет</div>
@@ -1116,24 +1144,14 @@
             <!-- CARD 3 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1undress.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1undress.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/1undress_fast.mp4"
-                  data-title="Раздевание"
-                  data-desc="1 вариант">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/2undress_fast.mp4"
-                  data-title="Раздевание"
-                  data-desc="2 вариант">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/3undress_fast.mp4"
-                  data-title="Раздевание"
-                  data-desc="3 вариант">3</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/1undress_fast.mp4" data-title="Раздевание" data-desc="1 вариант">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/2undress_fast.mp4" data-title="Раздевание" data-desc="2 вариант">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/3undress_fast.mp4" data-title="Раздевание" data-desc="3 вариант">3</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Раздевание</div>
@@ -1145,24 +1163,14 @@
             <!-- CARD 4 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1sex.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1sex.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/2Sex_fast.mp4"
-                  data-title="Секс"
-                  data-desc="1 вариант">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/1sex_fast.mp4"
-                  data-title="Секс"
-                  data-desc="2 вариант">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/1sex_fast.mp4"
-                  data-title="Секс"
-                  data-desc="3 вариант">3</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/2Sex_fast.mp4" data-title="Секс" data-desc="1 вариант">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/1sex_fast.mp4" data-title="Секс" data-desc="2 вариант">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/1sex_fast.mp4" data-title="Секс" data-desc="3 вариант">3</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Секс</div>
@@ -1174,24 +1182,14 @@
             <!-- CARD 5 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1raz.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1raz.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/1raz_fast.mp4"
-                  data-title="Жесты"
-                  data-desc="1 вариант">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/1raz_fast.mp4"
-                  data-title="Жесты"
-                  data-desc="2 вариант">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/1raz_fast.mp4"
-                  data-title="Жесты"
-                  data-desc="3 вариант">3</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/1raz_fast.mp4" data-title="Жесты" data-desc="1 вариант">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/1raz_fast.mp4" data-title="Жесты" data-desc="2 вариант">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/1raz_fast.mp4" data-title="Жесты" data-desc="3 вариант">3</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Жесты</div>
@@ -1203,24 +1201,14 @@
             <!-- CARD 6 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1kiss.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1kiss.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/1kiss_fast.mp4"
-                  data-title="Поцелуй"
-                  data-desc="1 вариант">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/2Kiss.mp4"
-                  data-title="Поцелуй"
-                  data-desc="2 вариант">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/1kiss_fast.mp4"
-                  data-title="Поцелуй"
-                  data-desc="3 вариант">3</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/1kiss_fast.mp4" data-title="Поцелуй" data-desc="1 вариант">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/2Kiss.mp4" data-title="Поцелуй" data-desc="2 вариант">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/1kiss_fast.mp4" data-title="Поцелуй" data-desc="3 вариант">3</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Поцелуй</div>
@@ -1232,24 +1220,14 @@
             <!-- CARD 7 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1mastur.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1mastur.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/1mastur_fast.mp4"
-                  data-title="Мастурбация"
-                  data-desc="1 вариант">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/2mastur_fast.mp4"
-                  data-title="Мастурбация"
-                  data-desc="2 вариант">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/2mastur_fast.mp4"
-                  data-title="Мастурбация"
-                  data-desc="3 вариант">3</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/1mastur_fast.mp4" data-title="Мастурбация" data-desc="1 вариант">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/2mastur_fast.mp4" data-title="Мастурбация" data-desc="2 вариант">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/2mastur_fast.mp4" data-title="Мастурбация" data-desc="3 вариант">3</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Мастурбация</div>
@@ -1261,24 +1239,14 @@
             <!-- CARD 8 -->
             <article class="gallery-item gif-variant">
               <div class="gallery-media gif-variant-media">
-                <button class="gif-arrow prev" type="button" aria-label="Назад">&#10094;</button>
-                <button class="gif-arrow next" type="button" aria-label="Вперёд">&#10095;</button>
-                <video class="gif-media-video" autoplay muted loop playsinline preload="auto"
-                  src="https://maxxximps.github.io/my-media/video/1cum.mp4"></video>
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                <video class="gif-media-video" autoplay muted loop playsinline preload="auto" src="https://maxxximps.github.io/my-media/video/1cum.mp4"></video>
               </div>
               <div class="gif-tabs">
-                <button class="gif-tab active"
-                  data-src="https://maxxximps.github.io/my-media/video/1cum_fast.mp4"
-                  data-title="Разное"
-                  data-desc="1 вариант">1</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/2cum_fast.mp4"
-                  data-title="Разное"
-                  data-desc="2 вариант">2</button>
-                <button class="gif-tab"
-                  data-src="https://maxxximps.github.io/my-media/video/3cum_fast.mp4"
-                  data-title="Разное"
-                  data-desc="3 вариант">3</button>
+                <button class="gif-tab active" data-src="https://maxxximps.github.io/my-media/video/1cum_fast.mp4" data-title="Разное" data-desc="1 вариант">1</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/2cum_fast.mp4" data-title="Разное" data-desc="2 вариант">2</button>
+                <button class="gif-tab" data-src="https://maxxximps.github.io/my-media/video/3cum_fast.mp4" data-title="Разное" data-desc="3 вариант">3</button>
               </div>
               <div class="gif-meta-wide">
                 <div class="gif-meta-title">Разное</div>
@@ -1401,424 +1369,165 @@
   </div>
 
   <!-- Запрет правого клика и перетаскивания -->
-  <script>
-    document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-    document.addEventListener('dragstart', function (e) { e.preventDefault(); });
-  </script>
+  
 
   <!-- JS: верхние разделы -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const btns = Array.from(document.querySelectorAll('[data-view-btn]'));
-      const body = document.body;
-
-      const sectionMap = {
-        all: null,
-        video: document.getElementById('videoSection'),
-        photo: document.getElementById('photoSection'),
-        contacts: document.getElementById('contactsSection'),
-      };
-
-      function setActiveBtn(view) {
-        btns.forEach(b => b.classList.toggle('active', b.dataset.viewBtn === view));
-      }
-
-      function setView(view, pushHash = true) {
-        body.setAttribute('data-view', view);
-        setActiveBtn(view);
-
-        if (pushHash) {
-          const hash = view === 'all' ? '' : ('#' + view);
-          if (hash) history.replaceState(null, '', hash);
-          else history.replaceState(null, '', window.location.pathname + window.location.search);
-        }
-
-        const target = sectionMap[view];
-        if (view === 'all') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else if (target) {
-          const y = target.getBoundingClientRect().top + window.scrollY - 90;
-          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-        }
-      }
-
-      btns.forEach(btn => {
-        btn.addEventListener('click', () => setView(btn.dataset.viewBtn, true));
-      });
-
-      const h = (location.hash || '').replace('#','').trim();
-      if (h === 'video' || h === 'photo' || h === 'contacts') setView(h, false);
-      else setView('all', false);
-    });
-  </script>
+  
 
   <!-- JS: карусели (hero + внутри фото карточек) + СВАЙПЫ -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const carousels = document.querySelectorAll('.carousel');
-
-      carousels.forEach(function (carousel) {
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prevBtn = carousel.querySelector('.carousel-arrow.prev');
-        const nextBtn = carousel.querySelector('.carousel-arrow.next');
-
-        if (!slides.length) return;
-
-        let index = 0;
-
-        function showSlide(i) {
-          slides.forEach((slide, idx) => {
-            const active = idx === i;
-            slide.classList.toggle('active', active);
-
-            const video = slide.querySelector('video');
-            if (video) {
-              if (active) {
-                try { video.currentTime = 0; video.play(); } catch (e) {}
-              } else {
-                try { video.pause(); } catch (e) {}
-              }
-            }
-          });
-          index = i;
-        }
-
-        function next(e) {
-          if (e) e.stopPropagation();
-          showSlide((index + 1) % slides.length);
-        }
-
-        function prev(e) {
-          if (e) e.stopPropagation();
-          showSlide((index - 1 + slides.length) % slides.length);
-        }
-
-        if (nextBtn) nextBtn.addEventListener('click', next);
-        if (prevBtn) prevBtn.addEventListener('click', prev);
-
-        let sx = 0, sy = 0, tracking = false;
-
-        carousel.addEventListener('touchstart', (e) => {
-          if (!e.touches || !e.touches.length) return;
-          tracking = true;
-          sx = e.touches[0].clientX;
-          sy = e.touches[0].clientY;
-        }, { passive: true });
-
-        carousel.addEventListener('touchend', (e) => {
-          if (!tracking) return;
-          tracking = false;
-          if (!e.changedTouches || !e.changedTouches.length) return;
-
-          const ex = e.changedTouches[0].clientX;
-          const ey = e.changedTouches[0].clientY;
-          const dx = ex - sx;
-          const dy = ey - sy;
-
-          if (Math.abs(dy) > Math.abs(dx)) return;
-          if (dx <= -45) next();
-          if (dx >= 45) prev();
-        }, { passive: true });
-
-        showSlide(0);
-      });
-    });
-  </script>
+  
 
   <!-- ✅ JS: GIF tabs + arrows (ВЗЯТО ИЗ СТАРОГО ВАРИАНТА) + iOS-kick -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      function tryPlay(v) {
-        if (!v) return;
-        // критично для iOS: muted + playsinline должны быть и как свойства, и как атрибуты
-        v.muted = true;
-        v.setAttribute('muted', '');
-        v.playsInline = true;
-        v.setAttribute('playsinline', '');
-        v.autoplay = true;
-        v.loop = true;
-
-        try {
-          const p = v.play();
-          if (p && typeof p.then === 'function') p.catch(() => {});
-        } catch (e) {}
-      }
-
-      document.querySelectorAll('.gif-variant').forEach(card => {
-        const tabs = Array.from(card.querySelectorAll('.gif-tab'));
-        const video = card.querySelector('.gif-media-video');
-        const title = card.querySelector('.gif-meta-title');
-        const desc = card.querySelector('.gif-meta-desc');
-
-        const prev = card.querySelector('.gif-arrow.prev');
-        const next = card.querySelector('.gif-arrow.next');
-
-        let index = tabs.findIndex(t => t.classList.contains('active'));
-        if (index < 0) index = 0;
-
-        function apply(i) {
-          if (!tabs.length) return;
-          index = (i + tabs.length) % tabs.length;
-          const tab = tabs[index];
-
-          tabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-
-          // ✅ СТАРЫЙ РАБОЧИЙ СПОСОБ: просто меняем src и play
-          video.src = tab.dataset.src;
-
-          try { video.currentTime = 0; } catch (e) {}
-          tryPlay(video);
-
-          title.textContent = tab.dataset.title || 'Standard';
-          desc.textContent = tab.dataset.desc || '';
-        }
-
-        tabs.forEach((tab, i) => {
-          tab.addEventListener('click', e => {
-            e.stopPropagation();
-            apply(i);
-          });
-        });
-
-        if (prev) prev.addEventListener('click', e => { e.stopPropagation(); apply(index - 1); });
-        if (next) next.addEventListener('click', e => { e.stopPropagation(); apply(index + 1); });
-
-        apply(index);
-      });
-
-      // ✅ iOS иногда режет autoplay пока не было жеста — делаем один “пинок” при первом касании
-      let kicked = false;
-      function kickAll() {
-        if (kicked) return;
-        kicked = true;
-        document.querySelectorAll('.gif-media-video').forEach(tryPlay);
-        // и hero тоже на всякий
-        document.querySelectorAll('.preview-frame video').forEach(tryPlay);
-      }
-      window.addEventListener('touchstart', kickAll, { passive: true, once: true });
-      window.addEventListener('click', kickAll, { once: true });
-
-      // ✅ ещё один мягкий автопинок после загрузки
-      setTimeout(() => {
-        document.querySelectorAll('.gif-media-video').forEach(tryPlay);
-      }, 120);
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState !== 'visible') return;
-        document.querySelectorAll('.gif-media-video').forEach(tryPlay);
-      });
-    });
-  </script>
+  
 
   <!-- JS: Lightbox viewer -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const lb = document.getElementById('lightbox');
-      const lbClose = document.getElementById('lightboxClose');
-      const lbMedia = document.getElementById('lightboxMedia');
-      const lbTitle = document.getElementById('lightboxTitle');
-      const lbPrev = document.getElementById('lbPrev');
-      const lbNext = document.getElementById('lbNext');
-      const lbWrap = document.getElementById('lightboxWrap');
-
-      let items = [];
-      let currentIndex = 0;
-
-      function getTitleFromNode(node) {
-        const tag = node.tagName.toLowerCase();
-        if (tag === 'img') return node.getAttribute('alt') || 'Фото';
-        if (tag === 'video') return node.getAttribute('aria-label') || 'Видео';
-        return 'Просмотр';
-      }
-
-      function extractItemFromSlide(slide) {
-        const img = slide.querySelector('img');
-        const vid = slide.querySelector('video');
-        if (img) return { type: 'img', src: img.currentSrc || img.src, title: getTitleFromNode(img) };
-        if (vid) return { type: 'video', src: vid.currentSrc || vid.src, title: getTitleFromNode(vid) };
-        return null;
-      }
-
-      function render(index) {
-        if (!items.length) return;
-        currentIndex = (index + items.length) % items.length;
-
-        lbMedia.innerHTML = '';
-
-        const item = items[currentIndex];
-        lbTitle.textContent = item.title || 'Просмотр';
-
-        if (item.type === 'img') {
-          const img = document.createElement('img');
-          img.src = item.src;
-          img.alt = item.title || 'Фото';
-          lbMedia.appendChild(img);
-        } else {
-          const v = document.createElement('video');
-          v.src = item.src;
-          v.autoplay = true;
-          v.loop = true;
-          v.muted = true;
-          v.setAttribute('muted','');
-          v.playsInline = true;
-          v.setAttribute('playsinline','');
-          v.controls = false;
-          lbMedia.appendChild(v);
-          try {
-            const p = v.play();
-            if (p && typeof p.then === 'function') p.catch(() => {});
-          } catch (e) {}
-        }
-
-        const showNav = items.length > 1;
-        lbPrev.classList.toggle('is-hidden', !showNav);
-        lbNext.classList.toggle('is-hidden', !showNav);
-      }
-
-      function openLightboxFromNode(node) {
-        items = [];
-        currentIndex = 0;
-
-        const gifCard = node.closest('.gif-variant');
-        if (gifCard) {
-          const tabs = Array.from(gifCard.querySelectorAll('.gif-tab'));
-          tabs.forEach((t) => {
-            items.push({
-              type: 'video',
-              src: t.dataset.src,
-              title: t.dataset.title || 'Variant'
-            });
-          });
-
-          const activeTab = gifCard.querySelector('.gif-tab.active');
-          if (activeTab) {
-            const idx = tabs.findIndex(t => t === activeTab);
-            currentIndex = Math.max(0, idx);
-          } else {
-            currentIndex = 0;
-          }
-        } else {
-          const carousel = node.closest('.carousel');
-          if (carousel) {
-            const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-            slides.forEach((s) => {
-              const it = extractItemFromSlide(s);
-              if (it) items.push(it);
-            });
-
-            const slide = node.closest('.carousel-slide');
-            if (slide) {
-              const idx = slides.findIndex(s => s === slide);
-              currentIndex = Math.max(0, idx);
-            } else {
-              currentIndex = 0;
-            }
-          } else {
-            const tag = node.tagName.toLowerCase();
-            if (tag === 'img') items = [{ type: 'img', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
-            if (tag === 'video') items = [{ type: 'video', src: node.currentSrc || node.src, title: getTitleFromNode(node) }];
-            currentIndex = 0;
-          }
-        }
-
-        if (!items.length) return;
-
-        document.body.classList.add('lb-open');
-        lb.classList.add('show');
-        lb.setAttribute('aria-hidden', 'false');
-
-        render(currentIndex);
-      }
-
-      function closeLightbox() {
-        lb.classList.remove('show');
-        lb.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('lb-open');
-
-        const v = lbMedia.querySelector('video');
-        if (v) { try { v.pause(); } catch(e) {} }
-
-        lbMedia.innerHTML = '';
-        items = [];
-        currentIndex = 0;
-      }
-
-      function next() { if (items.length > 1) render(currentIndex + 1); }
-      function prev() { if (items.length > 1) render(currentIndex - 1); }
-
-      lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
-      lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
-
-      lbNext.addEventListener('click', (e) => { e.stopPropagation(); next(); });
-      lbPrev.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
-
-      document.addEventListener('keydown', (e) => {
-        if (!lb.classList.contains('show')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') next();
-        if (e.key === 'ArrowLeft') prev();
-      });
-
-      let touchX = 0;
-      let touchY = 0;
-      let tracking = false;
-
-      lbWrap.addEventListener('touchstart', (e) => {
-        if (!lb.classList.contains('show')) return;
-        if (!e.touches || !e.touches.length) return;
-        tracking = true;
-        touchX = e.touches[0].clientX;
-        touchY = e.touches[0].clientY;
-      }, { passive: true });
-
-      lbWrap.addEventListener('touchend', (e) => {
-        if (!tracking || !lb.classList.contains('show')) return;
-        tracking = false;
-
-        if (!e.changedTouches || !e.changedTouches.length) return;
-        const endX = e.changedTouches[0].clientX;
-        const endY = e.changedTouches[0].clientY;
-
-        const dx = endX - touchX;
-        const dy = endY - touchY;
-
-        if (Math.abs(dy) > Math.abs(dx)) return;
-
-        if (dx <= -55) next();
-        if (dx >= 55) prev();
-      }, { passive: true });
-
-      function bindMediaClicks(root) {
-        root.querySelectorAll('.gallery-media img').forEach((img) => {
-          img.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openLightboxFromNode(img);
-          });
-        });
-
-        root.querySelectorAll('.preview-frame video').forEach((vid) => {
-          vid.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openLightboxFromNode(vid);
-          });
-        });
-
-        root.querySelectorAll('.gif-variant-media video').forEach((vid) => {
-          vid.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openLightboxFromNode(vid);
-          });
-        });
-      }
-
-      bindMediaClicks(document);
-    });
-  </script>
-</body>
+  
+<template id="mp-photo-template"><article class="gallery-item media-row-photo">
+              <div class="gallery-media" style="height:100%;">
+                <div class="carousel">
+                  
+                  
+                  
+                  <button class="carousel-arrow prev" type="button">❮</button>
+                  <button class="carousel-arrow next" type="button">❯</button>
+                </div>
+              </div>
+              <div class="gallery-meta">
+                <div>
+                  <div class="gallery-meta-main">Новая подборка</div>
+                  <div class="gallery-meta-type">статичное фото</div>
+                </div>
+                <div class="meta-actions">
+                  <a class="pill-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
+                </div>
+              </div>
+            </article></template><template id="mp-video-template"><article class="gallery-item gif-variant">
+              <div class="gallery-media gif-variant-media">
+                <button class="gif-arrow prev" type="button" aria-label="Назад">❮</button>
+                <button class="gif-arrow next" type="button" aria-label="Вперёд">❯</button>
+                
+              </div>
+              <div class="gif-tabs">
+                
+                
+                
+              </div>
+              <div class="gif-meta-wide">
+                <div class="gif-meta-title">Новая подборка</div>
+                <div class="gif-meta-desc"></div>
+                <a class="pill-order gif-order" href="https://t.me/Maxim_photoshop" target="_blank" rel="noopener">Заказать</a>
+              </div>
+            </article></template><script id="mp-editor-runtime">(()=>{
+'use strict';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2);
+let master=$('.page').cloneNode(true),theme=document.documentElement.dataset.mpTheme||'original',revision=document.documentElement.dataset.mpRevision||'initial';
+let editing=false,dirty=false,busy=false,token='',connection=null,modal=null,observer=null,toastTimer,view=['photo','video','contacts'].includes(location.hash.slice(1))?location.hash.slice(1):'all';
+const local=location.protocol==='file:',pos={},OWNER='maxxximps',REPO='my-site',BRANCH='main',API='https://api.github.com/repos/'+OWNER+'/'+REPO;
+const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+let lb=null,lbFocus=null;
+const blocks=[['header','Шапка'],['.hero','Приветствие'],['#photoSection','Фото'],['#videoSection','Видео'],['[data-section=format]','Формат работы'],['#contactsSection','Контакты'],['footer','Подвал']];
+function button(act,text,attrs='',primary=false){return `<button type="button" class="mp-button${primary?' mp-primary':''}" data-mp="${act}" ${attrs}>${text}</button>`;}
+function field(name,label,value,multi=false){return `<label for="mp-${name}">${esc(label)}</label>${multi?`<textarea id="mp-${name}" name="${name}">${esc(value)}</textarea>`:`<input id="mp-${name}" name="${name}" value="${esc(value)}">`}`;}
+function toast(message){$('.mp-admin-toast')?.remove();const e=document.createElement('div');e.className='mp-admin mp-admin-toast';e.setAttribute('role','status');e.textContent=message;document.body.append(e);clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.remove(),5000);}
+function snapshot(){return {html:master.outerHTML,theme,revision};}
+function mark(){dirty=true;updateStatus();}
+function updateStatus(){const e=$('.mp-save-status');if(e)e.textContent=dirty?'Есть несохранённые изменения':connection?'GitHub подключён':'Черновик в этой вкладке';}
+function collections(root=master){return [...$$('.carousel',root).map(el=>({el,kind:'carousel'})),...$$('.gif-variant',root).map(el=>({el,kind:'gif'}))];}
+collections().forEach((c,i)=>{if(!c.el.dataset.mpCollection)c.el.dataset.mpCollection='c'+i;});
+function collection(id,root=master){return collections(root).find(c=>c.el.dataset.mpCollection===id);}
+function titleOf(c){return c.el.closest('.hero')?'Главная приветственная карусель':($('.gallery-meta-main,.gif-meta-title',c.el.closest('article')||c.el)?.textContent.trim()||'Подборка примеров');}
+function isVideo(src){return /^data:video\//i.test(src)||/\.(mp4|webm|mov)([?#]|$)/i.test(src);}
+function mediaOf(c){
+ if(c.kind==='carousel')return $$('.carousel-slide',c.el).map(s=>{const n=$('img,video',s);return n?{src:n.getAttribute('src'),video:n.tagName==='VIDEO',title:n.getAttribute('alt')||'',description:'',reserve:false}:null;}).filter(Boolean);
+ const items=$$('.gif-tab',c.el).map(t=>({src:t.dataset.src,video:isVideo(t.dataset.src),title:t.dataset.title||'',description:t.dataset.desc||'',reserve:false}));
+ const n=$('.gif-media-video',c.el);if(n?.getAttribute('src')&&!items.some(m=>m.src===n.getAttribute('src')))items.push({src:n.getAttribute('src'),video:n.tagName==='VIDEO',title:'',description:'',reserve:true});
+ return items;
+}
+function newMedia(m){const n=document.createElement(m.video?'video':'img');n.setAttribute('src',m.src);if(m.video){n.muted=true;n.setAttribute('muted','');n.setAttribute('playsinline','');n.setAttribute('loop','');n.setAttribute('preload','metadata');}else{n.alt=m.title||'Пример';n.loading='lazy';}return n;}
+function setMedia(c,items){
+ if(c.kind==='carousel'){$$('.carousel-slide',c.el).forEach(e=>e.remove());const before=$('.carousel-arrow',c.el);items.forEach((m,i)=>{const d=document.createElement('div');d.className='carousel-slide'+(i===0?' active':'');d.append(newMedia(m));c.el.insertBefore(d,before);});}
+ else{const tabs=$('.gif-tabs',c.el);tabs.replaceChildren();const visible=items.filter(m=>!m.reserve);visible.forEach((m,i)=>{const b=document.createElement('button');b.className='gif-tab'+(i===0?' active':'');b.type='button';b.dataset.src=m.src;b.dataset.title=m.title;b.dataset.desc=m.description;b.textContent=String(i+1);tabs.append(b);});const initial=items.find(m=>m.reserve)||visible[0];const old=$('.gif-media-video',c.el);if(initial){const n=newMedia(initial);n.className='gif-media-video';old?old.replaceWith(n):$('.gif-variant-media',c.el).append(n);}else old?.remove();$('.gif-meta-title',c.el).textContent=visible[0]?.title||'';$('.gif-meta-desc',c.el).textContent=visible[0]?.description||'';}
+}
+function play(v){if(!v||v.tagName!=='VIDEO'||reduced||modal)return;const rect=v.getBoundingClientRect();if(rect.bottom<=0||rect.top>=window.innerHeight)return;v.muted=true;v.playsInline=true;v.play().catch(()=>{});}
+function show(c,i){
+ if(c.kind==='carousel'){const slides=$$('.carousel-slide',c.el);if(!slides.length)return;const ix=(i+slides.length)%slides.length;pos[c.el.dataset.mpCollection]=ix;slides.forEach((s,j)=>{s.classList.toggle('active',j===ix);const v=$('video',s);if(v){if(j===ix)play(v);else v.pause();}});}
+ else{const tabs=$$('.gif-tab',c.el);if(!tabs.length)return;const ix=(i+tabs.length)%tabs.length;pos[c.el.dataset.mpCollection]=ix;tabs.forEach((t,j)=>t.classList.toggle('active',j===ix));const t=tabs[ix];const old=$('.gif-media-video',c.el);const m={src:t.dataset.src,video:isVideo(t.dataset.src),title:t.dataset.title};const n=newMedia(m);n.className='gif-media-video';old?.pause?.();old?old.replaceWith(n):$('.gif-variant-media',c.el).append(n);$('.gif-meta-title',c.el).textContent=t.dataset.title||'';$('.gif-meta-desc',c.el).textContent=t.dataset.desc||'';if(m.video){observer?.observe(n);play(n);}}
+}
+function render(){
+ observer?.disconnect();$$('video').forEach(v=>v.pause());const live=$('.page');live.replaceWith(master.cloneNode(true));document.documentElement.dataset.mpTheme=theme;document.body.classList.toggle('mp-is-editing',editing);document.body.dataset.view=view;$$('[data-view-btn]').forEach(b=>b.classList.toggle('active',b.dataset.viewBtn===view));
+ $$('.mp-admin-bar,.mp-admin-entry').forEach(n=>n.remove());
+ if(editing){const bar=document.createElement('div');bar.className='mp-admin mp-admin-bar';bar.innerHTML=`<span class="mp-save-status"></span>${button('texts','Тексты')}${button('media','Фото, GIF и видео','',true)}${button('links','Ссылки')}${button('themes','Цвета')}${button('download','Скачать копию')}${button('save',connection?'Сохранить на сайте':'Подключить GitHub','',true)}${button('exit','Выйти')}`;document.body.append(bar);updateStatus();collections($('.page')).forEach(c=>{const t=document.createElement('div');t.className='mp-admin mp-inline-tools';t.innerHTML=button('edit-media','✎ Добавить / заменить / удалить',`data-id="${c.el.dataset.mpCollection}"`);(c.el.closest('article')||c.el.parentElement).append(t);});}
+ else if(local||location.hash==='#owner'){const b=document.createElement('div');b.className='mp-admin mp-admin-entry';b.innerHTML=button('enter',local?'Панель управления':'Войти владельцу','',true);document.body.append(b);}
+ observer=new IntersectionObserver(entries=>entries.forEach(e=>{const v=e.target;if(e.isIntersecting&&!document.hidden&&(!v.closest('.carousel-slide')||v.closest('.carousel-slide').classList.contains('active')))play(v);else v.pause();}),{threshold:.1});
+ collections($('.page')).forEach(c=>{const count=c.kind==='carousel'?$$('.carousel-slide',c.el).length:$$('.gif-tab',c.el).length;const i=(pos[c.el.dataset.mpCollection]||0)%Math.max(1,count);show(c,i);let x=0,y=0;c.el.addEventListener('touchstart',e=>{x=e.changedTouches[0].clientX;y=e.changedTouches[0].clientY;},{passive:true});c.el.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x,dy=e.changedTouches[0].clientY-y;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){show(c,(pos[c.el.dataset.mpCollection]||0)+(dx<0?1:-1));}},{passive:true});});
+ $$('video',$('.page')).forEach(v=>{v.removeAttribute('autoplay');v.preload='metadata';observer.observe(v);});
+}
+function closeModal(){if(!modal)return;$$('video',modal).forEach(v=>v.pause());modal.close();modal.remove();modal=null;}
+function dialog(title,html){closeModal();$$('video').forEach(v=>v.pause());const e=document.createElement('dialog');e.className='mp-admin mp-admin-dialog';e.setAttribute('aria-label',title);e.innerHTML=`<div class="mp-dialog-head"><h2>${esc(title)}</h2>${button('close','✕','aria-label="Закрыть"')}</div><div class="mp-dialog-body">${html}</div>`;document.body.append(e);modal=e;e.addEventListener('cancel',ev=>{ev.preventDefault();if(!busy)closeModal();});e.showModal();return e;}
+function applyChange(){mark();closeModal();render();toast('Изменения применены к черновику. Сохраните на сайте или скачайте копию.');}
+function chooseMedia(){const cs=collections();const html=`<p>Выберите карусель. Внутри у каждого файла будут кнопки «Заменить» и «Удалить».</p>`+cs.map(c=>`<div class="mp-collection-row"><div>${esc(titleOf(c))}<small>${c.el.closest('.hero')?'Главная':c.kind==='gif'?'Видео / GIF':'Фото'} · ${mediaOf(c).filter(m=>!m.reserve).length} примеров</small></div>${button('edit-media','Открыть файлы',`data-id="${c.el.dataset.mpCollection}"`,true)}</div>`).join('')+`<div class="mp-actions">${button('new-photo','+ Подборка фото')}${button('new-video','+ Подборка видео')}</div>`;dialog('Фото, GIF и видео',html);}
+async function readFile(f){const accepted=/^(image\/(jpeg|png|gif|webp)|video\/(mp4|webm))$/;if(!accepted.test(f.type))throw Error('Нужен JPG, PNG, GIF, WebP, MP4 или WebM. HEIC и MOV сначала преобразуйте в JPG / MP4.');if(f.size>20*1024*1024)throw Error('Файл больше 20 МБ. Уменьшите его размер.');const src=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=()=>no(Error('Не удалось прочитать файл.'));r.readAsDataURL(f);});return {src,video:f.type.startsWith('video'),title:'',description:'',reserve:false};}
+function editMedia(id){
+ const c=collection(id);if(!c)return;let draft=mediaOf(c).map(m=>({...m}));let replace=-1;
+ const el=dialog('Файлы: '+titleOf(c),`<p>«Заменить» — выбрать другой файл. «Удалить» — убрать пример из карусели. Изменения вступят в силу после «Применить».</p><div class="mp-notice">Фото, GIF и видео можно смешивать. До 20 МБ на файл; до 80 МБ новых файлов за одно сохранение. Исходные файлы в репозитории при удалении карточки не стираются.</div><form id="mp-media-form"><div class="mp-media-list"></div><input id="mp-file-picker" type="file" accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm" multiple hidden><div class="mp-actions">${button('pick-add','+ Добавить фото / GIF / видео','',true)}</div><div class="mp-status" role="status"></div><div class="mp-actions mp-sticky-actions">${button('media','Назад к списку')}${c.el.closest('.hero')?'':button('remove-collection','Удалить всю подборку','data-danger="true"')}<button type="submit" class="mp-button mp-primary">Применить изменения</button></div></form>`);
+ const list=$('.mp-media-list',el),input=$('#mp-file-picker',el),status=$('.mp-status',el);
+ function sync(){$$('[data-field]',list).forEach(n=>{draft[+n.dataset.index][n.dataset.field]=n.value;});}
+ function paint(){list.innerHTML=draft.map((m,i)=>`<div class="mp-media-row"><div>${m.video?`<video class="mp-media-preview" src="${esc(m.src)}" controls playsinline preload="none"></video>`:`<img class="mp-media-preview" src="${esc(m.src)}" alt="Пример ${i+1}" loading="lazy">`}</div><div><div class="mp-muted">${m.reserve?'Дополнительный исходный файл (не показан в карусели)':`Пример ${i+1} · ${m.video?'видео':/^data:image\/gif|\.gif([?#]|$)/i.test(m.src)?'GIF':'фото'}`}</div>${!m.reserve?`<label>Название / подпись</label><input data-index="${i}" data-field="title" value="${esc(m.title)}">${c.kind==='gif'?`<label>Короткое описание</label><input data-index="${i}" data-field="description" value="${esc(m.description)}">`:''}`:''}<div class="mp-row-buttons"><button type="button" class="mp-button mp-primary" data-replace="${i}">Заменить</button><button type="button" class="mp-button mp-danger" data-delete="${i}">Удалить</button>${m.reserve?'':`<button type="button" class="mp-button" data-move="-1" data-index="${i}" aria-label="Переместить раньше">↑</button><button type="button" class="mp-button" data-move="1" data-index="${i}" aria-label="Переместить позже">↓</button>`}</div></div></div>`).join('')||'<p>Пока нет файлов. Нажмите «Добавить фото / GIF / видео».</p>';}
+ paint();
+ list.onclick=e=>{const b=e.target.closest('button');if(!b)return;sync();if(b.dataset.replace!==undefined){replace=+b.dataset.replace;input.multiple=false;input.click();}else if(b.dataset.delete!==undefined){draft.splice(+b.dataset.delete,1);paint();}else if(b.dataset.move){const i=+b.dataset.index,j=i+(+b.dataset.move);if(j>=0&&j<draft.length&&!draft[j].reserve){[draft[i],draft[j]]=[draft[j],draft[i]];paint();}}};
+ $('[data-mp=pick-add]',el).onclick=()=>{sync();replace=-1;input.multiple=true;input.click();};
+ input.onchange=async()=>{const files=[...input.files];if(!files.length)return;busy=true;$$('button',el).forEach(b=>b.disabled=true);try{status.textContent='Читаю файлы…';const loaded=[];for(const f of files){const m=await readFile(f);if(c.kind==='gif')m.title=titleOf(c);loaded.push(m);}let projected=draft.slice();if(replace>=0)projected[replace]={...draft[replace],...loaded[0],title:draft[replace].title,description:draft[replace].description,reserve:draft[replace].reserve};else projected.push(...loaded);const other=collections().filter(x=>x.el.dataset.mpCollection!==id).flatMap(mediaOf);const total=[...projected,...other].filter(m=>m.src.startsWith('data:')).reduce((n,m)=>n+m.src.length*.75,0);if(total>80*1024*1024)throw Error('Больше 80 МБ новых файлов. Сначала сохраните текущие изменения на сайте.');draft=projected;paint();status.textContent='Готово. Нажмите «Применить изменения».';}catch(e){status.textContent=e.message;}finally{busy=false;$$('button',el).forEach(b=>b.disabled=false);input.value='';}};
+ $('[data-mp=remove-collection]',el)?.addEventListener('click',()=>{if(confirm('Удалить всю подборку из черновика?')){c.el.closest('article').remove();applyChange();}});
+ $('form',el).onsubmit=e=>{e.preventDefault();if(busy)return;sync();setMedia(c,draft);pos[id]=0;applyChange();};
+}
+function addCollection(kind){const sample=$('#mp-'+(kind==='photo'?'photo':'video')+'-template').content.firstElementChild;if(!sample){toast('Не осталось шаблона подборки. Верните исходную копию или добавьте подборку до удаления последней.');return;}const next=sample.cloneNode(true);const id='c-'+uid();const target=kind==='photo'?$('.carousel',next):next;target.dataset.mpCollection=id;const c={el:target,kind:kind==='photo'?'carousel':'gif'};setMedia(c,[]);const title=$('.gallery-meta-main,.gif-meta-title',next);if(title)title.textContent='Новая подборка';$(kind==='photo'?'.photo-grid':'.gif-grid',master).append(next);mark();render();editMedia(id);}
+function textNodes(root){const nodes=[];const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);while(walker.nextNode()){const n=walker.currentNode;if(n.textContent.trim()&&/[\p{L}\p{N}]/u.test(n.textContent)&&!n.parentElement.closest('svg,script,style,.gif-tab,.gif-meta-title,.gif-meta-desc'))nodes.push(n);}return nodes;}
+function editTexts(selected=0){const el=dialog('Редактирование всех текстов',`<p>Выберите часть сайта и исправьте текст. Названия и описания вариантов видео меняются в панели «Фото, GIF и видео» у нужного файла.</p><label for="mp-block">Часть сайта</label><select id="mp-block">${blocks.map((b,i)=>`<option value="${i}" ${i===selected?'selected':''}>${b[1]}</option>`).join('')}</select><form><div id="mp-text-fields"></div><div class="mp-actions mp-sticky-actions">${button('close','Отмена')}<button type="submit" class="mp-button mp-primary">Применить текст</button></div></form>`);let entries=[];const edits=new Map();
+ function sync(){entries.forEach((n,i)=>edits.set(n,$(`[name=text-${i}]`,el).value));}
+ function paint(){const b=$(blocks[+$('#mp-block',el).value][0],master);entries=b?textNodes(b):[];$('#mp-text-fields',el).innerHTML=entries.map((n,i)=>`<div class="mp-text-field">${field('text-'+i,'Текст '+(i+1),edits.has(n)?edits.get(n):n.textContent.trim(),n.textContent.length>90)}</div>`).join('');}
+ $('#mp-block',el).onchange=()=>{sync();paint();};paint();$('form',el).onsubmit=e=>{e.preventDefault();sync();edits.forEach((value,n)=>{const before=n.textContent.match(/^\s*/)[0],after=n.textContent.match(/\s*$/)[0];n.textContent=before+value+after;});applyChange();};
+}
+function editLinks(){const links=$$('a[href]',master);const el=dialog('Ссылки всех кнопок',`<p>Здесь показаны все ссылки, включая повторяющиеся кнопки заказа.</p><form>${links.map((a,i)=>field('link-'+i,a.textContent.trim()||'Ссылка '+(i+1),a.getAttribute('href'))).join('')}<div class="mp-status" role="status"></div><div class="mp-actions mp-sticky-actions">${button('close','Отмена')}<button type="submit" class="mp-button mp-primary">Применить ссылки</button></div></form>`);$('form',el).onsubmit=e=>{e.preventDefault();const values=links.map((a,i)=>$(`[name=link-${i}]`,el).value.trim());if(values.some(v=>!/^https:\/\/|^#[a-z\d_-]*$/i.test(v))){$('.mp-status',el).textContent='Используйте ссылки https:// или якорь #раздел.';return;}links.forEach((a,i)=>a.setAttribute('href',values[i]));applyChange();};}
+function colors(){const choices=[['original','Исходная','#ff3b81'],['wine','Бордо','#db7a9f'],['plum','Сливовая','#bd9ce9'],['graphite','Графит','#b7c8d2'],['amber','Тёплая','#e7b180']];const el=dialog('Цветовая схема',`<p>Панель видна только владельцу. После сохранения выбранные цвета увидят все посетители. «Исходная» возвращает прежние цвета.</p><div class="mp-swatches">${choices.map(([id,label,col])=>`<button type="button" class="mp-button mp-swatch" data-color="${id}" aria-pressed="${theme===id}"><i style="--mp-color:${col}"></i>${label}</button>`).join('')}</div><div class="mp-actions">${button('close','Готово','',true)}</div>`);$$('[data-color]',el).forEach(b=>b.onclick=()=>{theme=b.dataset.color;document.documentElement.dataset.mpTheme=theme;$$('[data-color]',el).forEach(n=>n.setAttribute('aria-pressed',String(n===b)));mark();});}
+function serialize(state=snapshot()){
+ const doc=document.documentElement.cloneNode(true);$$('.mp-admin',doc).forEach(n=>n.remove());const shell=document.createElement('div');shell.innerHTML=state.html;$('.page',doc).replaceWith(shell.firstElementChild);doc.dataset.mpTheme=state.theme;doc.dataset.mpRevision=state.revision;const body=$('body',doc);body.classList.remove('mp-is-editing','lb-open');body.dataset.view='all';const light=$('#lightbox',doc);light?.classList.remove('show');light?.setAttribute('aria-hidden','true');$('#lightboxMedia',doc)?.replaceChildren();return '<!DOCTYPE html>\n'+doc.outerHTML;
+}
+function download(){const url=URL.createObjectURL(new Blob([serialize()],{type:'text/html;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='maxim-original-editor.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);toast('Копия подготовлена для скачивания. Проверьте папку «Загрузки»; сайт в интернете пока не изменён.');}
+function lightbox(c,i){const items=mediaOf(c).filter(m=>!m.reserve);if(!items.length)return;lb={items,index:i};lbFocus=document.activeElement;paintLightbox();$('#lightbox').classList.add('show');$('#lightbox').setAttribute('aria-hidden','false');document.body.classList.add('lb-open');$('#lightboxClose').focus();}
+function paintLightbox(){if(!lb)return;const m=lb.items[lb.index];const n=newMedia(m);if(m.video){n.controls=true;n.autoplay=true;}const host=$('#lightboxMedia');$$('video',host).forEach(v=>v.pause());host.replaceChildren(n);$('#lightboxTitle').textContent=m.title||'Просмотр';}
+function closeLightbox(){lb=null;$$('video',$('#lightbox')).forEach(v=>v.pause());$('#lightboxMedia').replaceChildren();$('#lightbox').classList.remove('show');$('#lightbox').setAttribute('aria-hidden','true');document.body.classList.remove('lb-open');lbFocus?.focus?.();}
+async function api(path,method='GET',body){const url=path==='/user'?'https://api.github.com/user':API+path;const r=await fetch(url,{method,headers:{Accept:'application/vnd.github+json',Authorization:'Bearer '+token,'X-GitHub-Api-Version':'2026-03-10',...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined,cache:'no-store',signal:AbortSignal.timeout(60000)});let d={};try{d=await r.json();}catch{}if(!r.ok){if(r.status===401)throw Error('GitHub не принял ключ. Проверьте ключ и срок действия.');if(r.status===403)throw Error('Нет доступа или исчерпан лимит GitHub. Нужен Contents: Read and write для my-site.');if(r.status===409||r.status===422)throw Error('GitHub не принял изменение. Возможно, ветка уже обновлена. Скачайте копию и переподключитесь.');throw Error('Ошибка GitHub '+r.status+'. '+(d.message||''));}return d;}
+async function getTarget(path){const ref=(await api('/git/ref/heads/'+BRANCH)).object.sha;const commit=await api('/git/commits/'+ref);const tree=await api('/git/trees/'+commit.tree.sha+'?recursive=1');if(tree.truncated)throw Error('Репозиторий слишком большой для этого редактора.');return {head:ref,tree:commit.tree.sha,sha:tree.tree.find(e=>e.path===path)?.sha||null};}
+function decode64(s){return new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')),c=>c.charCodeAt(0)));}
+function encode64(s){const bytes=new TextEncoder().encode(s);let str='';for(let i=0;i<bytes.length;i+=32768)str+=String.fromCharCode(...bytes.subarray(i,i+32768));return btoa(str);}
+function connect(){
+ const el=dialog('Подключить GitHub',`<p>После подключения можно будет сохранять тексты и загружать файлы прямо из этой панели. Репозиторий: <b>maxxximps / my-site</b>.</p><form><label for="mp-target">Куда сохранять</label><select id="mp-target"><option value="editor-preview/index.html">Пробная страница — текущий сайт не заменять</option><option value="index.html">Главная страница — обновлять текущий сайт</option></select><label for="mp-token">Личный ключ доступа GitHub</label><input id="mp-token" type="password" autocomplete="off" spellcheck="false" autocapitalize="none" placeholder="github_pat_…"><p style="margin-top:12px">Ключ остаётся только в памяти этой вкладки, отправляется только api.github.com и не сохраняется в файле сайта. После выхода нужно ввести его снова. Не присылайте ключ в чат.</p><details><summary>Где получить ключ?</summary><p>На GitHub: аватар → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token. Repository access: Only select repositories → my-site. Repository permissions: Contents → Read and write. Укажите ограниченный срок действия. Скопируйте созданный ключ в поле выше.</p></details><div class="mp-notice" style="margin-top:15px">Подключение редактора не отменяет правила хостинга: GitHub запрещает порнографический контент, включая сгенерированный. Вопрос размещения этих медиа нужно решить отдельно.</div><div class="mp-actions">${button('close','Отмена')}<button type="submit" class="mp-button mp-primary">Подключить</button></div><div class="mp-status" role="status"></div></form>`);
+ $('form',el).onsubmit=async e=>{e.preventDefault();if(busy)return;const candidate=$('#mp-token',el).value.trim(),path=$('#mp-target',el).value;const status=$('.mp-status',el);if(!candidate){status.textContent='Вставьте ключ.';return;}token=candidate;busy=true;$$('button',el).forEach(b=>b.disabled=true);status.textContent='Проверяю доступ. Пока ничего не меняю…';try{const user=await api('/user');if(user.login.toLowerCase()!==OWNER)throw Error('Нужен аккаунт владельца maxxximps.');const repo=await api('');if(!repo.permissions?.push)throw Error('Нет права записи в репозиторий my-site.');const current=await getTarget(path);if(current.sha){const blob=await api('/git/blobs/'+current.sha);const remote=decode64(blob.content);const remoteRev=remote.match(/data-mp-revision="([^"]+)"/)?.[1];const originalSha=document.documentElement.dataset.mpOriginalSha;const same=remoteRev===revision||current.sha===originalSha;if(!same&&!confirm('На GitHub в '+path+' находится другая версия страницы. При будущем сохранении она будет заменена этим черновиком. Разрешить?'))throw Error('Подключение отменено. Сначала скачайте свою копию.');}connection={...current,path};$('#mp-token',el).value='';editing=true;busy=false;closeModal();render();toast('Подключено. Никакие файлы пока не изменены.');}catch(err){token='';connection=null;status.textContent=err.message;}finally{busy=false;$$('button',el).forEach(b=>b.disabled=false);}};
+}
+function saveDialog(){if(!connection){connect();return;}const el=dialog('Сохранить на сайте',`<p>Будут сохранены тексты, ссылки, палитра и изменения всех каруселей.</p><div class="mp-notice">${connection.path==='index.html'?'Обновится главная страница maxim-ps.live.':'Обновится отдельная пробная страница /editor-preview/. Главная страница останется прежней.'}\nНовые файлы попадут в media/. Существующие файлы и CNAME не удаляются.</div><div class="mp-actions">${button('disconnect','Отключить GitHub')}${button('close','Отмена')}${button('publish','Сохранить изменения','',true)}</div><div class="mp-status" role="status"></div>`);$('[data-mp=publish]',el).onclick=()=>publish(el);}
+async function publish(el){
+ if(!connection||!token||busy)return;busy=true;$$('button',el).forEach(b=>b.disabled=true);const status=$('.mp-status',el);let done=false;
+ try{status.textContent='Проверяю актуальность страницы…';const target=await getTarget(connection.path);if(target.sha!==connection.sha)throw Error('Эта страница уже изменена в другой вкладке или на GitHub. Чужие правки не перезаписаны. Скачайте свою копию и переподключитесь.');const pending=master.cloneNode(true),assets=new Map();$$('[src],[data-src]',pending).forEach(n=>['src','data-src'].forEach(a=>{const src=n.getAttribute(a);if(src?.startsWith('data:'))assets.set(src,null);}));const entries=[],batch=Date.now()+'-'+uid().slice(0,8);let count=0;
+ for(const src of assets.keys()){status.textContent=`Загружаю файл ${++count} из ${assets.size}…`;const match=src.match(/^data:(image\/(?:jpeg|png|gif|webp)|video\/(?:mp4|webm));base64,([\s\S]+)$/);if(!match)throw Error('Некорректный формат файла.');const ext={'image/jpeg':'jpg','image/png':'png','image/gif':'gif','image/webp':'webp','video/mp4':'mp4','video/webm':'webm'}[match[1]];const path='media/'+batch+'-'+count+'.'+ext;const blob=await api('/git/blobs','POST',{content:match[2],encoding:'base64'});entries.push({path,mode:'100644',type:'blob',sha:blob.sha});assets.set(src,'https://maxim-ps.live/'+path);}
+ $$('[src],[data-src]',pending).forEach(n=>['src','data-src'].forEach(a=>{const src=n.getAttribute(a);if(assets.has(src))n.setAttribute(a,assets.get(src));}));
+ const nextRevision=uid();const html=serialize({html:pending.outerHTML,theme,revision:nextRevision});status.textContent='Сохраняю страницу и новые файлы одним изменением…';const page=await api('/git/blobs','POST',{content:encode64(html),encoding:'base64'});entries.push({path:connection.path,mode:'100644',type:'blob',sha:page.sha});const tree=await api('/git/trees','POST',{base_tree:target.tree,tree:entries});const commit=await api('/git/commits','POST',{message:'Update portfolio from owner editor',tree:tree.sha,parents:[target.head]});await api('/git/refs/heads/'+BRANCH,'PATCH',{sha:commit.sha,force:false});done=true;master=pending;revision=nextRevision;connection={...connection,head:commit.sha,sha:page.sha};dirty=false;updateStatus();status.textContent='Сохранено в GitHub. Публикация Pages ещё должна завершиться; это может занять несколько минут.\n';const a=document.createElement('a');a.href='https://maxim-ps.live/'+connection.path.replace(/index\.html$/,'');a.target='_blank';a.rel='noopener';a.textContent='Открыть страницу';status.append(a);
+ }catch(err){status.textContent='Сохранение не подтверждено. '+err.message+'\nПри потере связи сначала проверьте историю GitHub перед повторной попыткой. Черновик остаётся в этой вкладке.';}finally{busy=false;$$('button',el).forEach(b=>b.disabled=false);if(done)$('[data-mp=publish]',el).disabled=true;}
+}
+document.addEventListener('click',e=>{
+ const admin=e.target.closest('[data-mp]');if(admin){if(busy)return;const action=admin.dataset.mp;if(action==='enter'){if(local){editing=true;render();}else connect();return;}if(action==='close'){closeModal();return;}if(!editing)return;if(action==='texts')editTexts();else if(action==='media')chooseMedia();else if(action==='edit-media')editMedia(admin.dataset.id);else if(action==='links')editLinks();else if(action==='themes')colors();else if(action==='download')download();else if(action==='save')saveDialog();else if(action==='new-photo')addCollection('photo');else if(action==='new-video')addCollection('video');else if(action==='disconnect'){token='';connection=null;if(!local)editing=false;closeModal();render();}else if(action==='exit'){if(dirty&&!confirm('Есть несохранённые изменения. Перед закрытием вкладки скачайте копию. Выйти из панели?'))return;token='';connection=null;editing=false;closeModal();if(location.hash==='#owner')history.replaceState(null,'',location.pathname+location.search);render();}return;}
+ if(e.target.closest('.mp-admin'))return;
+ const nav=e.target.closest('[data-view-btn]');if(nav){view=nav.dataset.viewBtn;document.body.dataset.view=view;$$('[data-view-btn]').forEach(b=>b.classList.toggle('active',b===nav));if(location.hash!=='#owner')history.replaceState(null,'',location.pathname+location.search+(view==='all'?'':'#'+view));window.scrollTo({top:0,behavior:'smooth'});return;}
+ const arrow=e.target.closest('.carousel-arrow,.gif-arrow');const tab=e.target.closest('.gif-tab');const node=e.target.closest('.page img,.page video');
+ if(arrow||tab||node){const source=arrow||tab||node;const el=source.closest('[data-mp-collection]');if(!el)return;const c=collection(el.dataset.mpCollection,$('.page'));if(arrow)show(c,(pos[el.dataset.mpCollection]||0)+(arrow.classList.contains('next')?1:-1));else if(tab)show(c,$$('.gif-tab',c.el).indexOf(tab));else lightbox(c,pos[el.dataset.mpCollection]||0);return;}
+ if(e.target.closest('#lightboxClose')||e.target===$('#lightbox'))closeLightbox();else if(lb&&(e.target.closest('#lbPrev')||e.target.closest('#lbNext'))){lb.index=(lb.index+(e.target.closest('#lbNext')?1:lb.items.length-1))%lb.items.length;paintLightbox();}
+});
+document.addEventListener('keydown',e=>{if(!lb)return;if(e.key==='Escape')closeLightbox();else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){lb.index=(lb.index+(e.key==='ArrowRight'?1:lb.items.length-1))%lb.items.length;paintLightbox();e.preventDefault();}});
+window.addEventListener('hashchange',()=>{if(location.hash==='#owner')render();});
+window.addEventListener('beforeunload',e=>{if(dirty||busy){e.preventDefault();e.returnValue='';}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)$$('video').forEach(v=>v.pause());});
+render();
+})();
+</script></body>
 </html>
-
-
-
-
-
